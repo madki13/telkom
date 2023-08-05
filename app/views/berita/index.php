@@ -7,7 +7,6 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\ListView;
 
-
 /** @var yii\web\View $this */
 /** @var app\models\BeritaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -23,22 +22,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <div class="container">
-        <div class="row">
-            <div class="row">
-            <?php
-                echo ListView::widget( [
-                    'dataProvider' => $dataProvider,
-                    'pager' => ['options' => ['class' => 'pagination col-md-12', 'maxButtonCount'=>4]],
-                    'itemView' => 'blog/listNews',
-                    'summary'=>'',
-                ]); ?>
-
-            </div>
-
-        </div>
-
+        <?= ListView::widget( [
+            'dataProvider' => $dataProvider,
+            'pager' => ['options' => ['class' => 'pagination col-md-12', 'maxButtonCount'=>4]],
+            'itemView' => 'blog/listNews',
+            'itemOptions' => [
+                'class' => 'col-4',
+            ],
+            'options' => [
+                'class' => 'row',
+            ],
+            'summary'=>'',
+        ]); ?>
     </div>
-
 </div> 
 
 <?php /* <div class="Berita-index">

@@ -8,7 +8,7 @@ if(empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'].$photo)){
 }
 
 ?>
-<div class="col-lg-4 col-md-4">
+<div class="col-4" data-key="<?= $key; ?>">
     <div class="berita-index animate-box fadeInUp animated-fast">
         <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>">
             <img class="img-responsive" src="<?= $photo ?>" />
