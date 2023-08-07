@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'itemView' => 'blog/listNews',
                     'summary' => '',
                     'itemOptions' => [
-                        'class' => 'card',
+                        'class' => 'col-4',
                     ],
                     'options' => [
                         'class' => 'card-body',
