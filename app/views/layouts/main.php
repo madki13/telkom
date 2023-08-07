@@ -158,14 +158,21 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-4 col-xl-3">
                     <h5>Halaman</h5>
-                    <ul class="nav-list">
-                        <li><a href="site/index">beranda</a></li>
-                        <li><a href="berita/index">berita</a></li>
-                        <li><a href="/testimoni/index   9">testimoni</a></li>
-                        <li><a href="site/contact">hubungi kami</a></li>
+                    <?php
 
-                    </ul>
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'items' => [
+                            ['label' => 'Beranda', 'url' => ['/site']],
+                            ['label' => 'Berita', 'url' => ['/berita']],
+                            ['label' => 'Testimoni', 'url' => ['/testimoni']],
+                            ['label' => 'Hubungi Kami', 'url' => ['/site/contact']],
+                        ],
+                    ]);
+                    ?>
                 </div>
+
+
             </div>
         </div>
         <div class="row no-gutters social-container">
