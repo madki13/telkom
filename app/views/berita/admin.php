@@ -12,27 +12,35 @@ use yii\widgets\ListView;
 /** @var app\models\BeritaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Berita';
+$this->title = 'admin';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<p>
+    <?= Html::a('Create Layanan', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+
+
 
 <div class="Berita-admin">
-    <?= GridView::widget($dataProvider, $searchModel, $this->title,
-    [
-        ['class' => 'kartik\grid\SerialColumn'],
+<?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
             'id',
             'judul',
             'konten:ntext',
             'penulis',
             'tanggal_terbit',
-            //  'photo',
-        [
-            'class' => ActionColumn::className(),
-            'width' => '150px',
-            'urlCreator' => function ($action, $model, $key, $index, $column) {
-                return Url::toRoute([$action, 'id' => $model->id]);
-            }
+            //'foto',
+            [
+                'class' => ActionColumn::className(),
+                'urlCreator' => function ($action, Berita $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'id' => $model->id]);
+                 }
+            ],
         ],
-    ]) ?>
+    ]); ?>
 </div>

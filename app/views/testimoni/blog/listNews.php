@@ -12,9 +12,8 @@ if(empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'].$photo)){
 
 <div class="card" style="width: 18rem;">
     <div class="berita-index animate-box fadeInUp animated-fast">
-        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" nama="<?= $model->nama ?>">
-            <img class="img-responsive" src="<?= $photo ?>" />
-        </a>
+
+        <img class="img-responsive" src="<?= $photo ?>" />
         <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->nama ?>">
 
     </div>
