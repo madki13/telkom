@@ -149,7 +149,7 @@ AppAsset::register($this);
                     </dl>
                     <dl class="contact-list">
                         <dt>email:</dt>
-                        <dd><a href="mailto:raaaaygbs@gmail.com">raaaaygbs@gmail.com</a></dd>
+                        <dd><a href="mailto:corporate_comm@telkom.co.id">corporate_comm@telkom.co.id</a></dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
@@ -177,7 +177,7 @@ AppAsset::register($this);
         </div>
         <div class="row no-gutters social-container">
             <div class="col"><a class="social-inner" href="https://wa.me/082211371673"><span class="icon mdi mdi-WhatsApp"></span><span>WhatsApp</span></a></div>
-            <div class="col"><a class="social-inner" href="mailto:raaaaygbs@gmail.com"><span class="icon mdi mdi-gmail"></span><span>Gmail</span></a></div>
+            <div class="col"><a class="social-inner" href="mailto:corporate_comm@telkom.co.id"><span class="icon mdi mdi-gmail"></span><span>Gmail</span></a></div>
 
         </div>
     </footer>
