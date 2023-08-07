@@ -8,16 +8,19 @@ if(empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'].$photo)){
 }
 
 ?>
-<div class="col-lg-4 col-md-4">
-    <div class="testimoni-index animate-box fadeInUp animated-fast">
+
+
+<div class="card" style="width: 18rem;">
+    <div class="berita-index animate-box fadeInUp animated-fast">
+        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" nama="<?= $model->nama ?>">
             <img class="img-responsive" src="<?= $photo ?>" />
         </a>
-        <div class="testimoni-text">
-            <span class="posted_on"><?= $model->nama ?></span>
+        <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->nama ?>">
 
-            <span class="posted_on"><?= $model->testimoni ?></span>
-            <span class="posted_on"><?= $model->tanggal_terbit ?></span>
-
-        </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><?= $model->nama ?></h5>
+        <p class="card-text"><?= $model->testimoni ?></p>
+        <small class="text-muted"><?= $model->tanggal_terbit ?></small>
     </div>
 </div>

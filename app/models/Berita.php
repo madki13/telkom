@@ -80,5 +80,38 @@ class Berita extends \app\components\ActiveRecord
         }
     }
 
+    public function formFields()
+    {
+        return [
+            [
+                'name'=>'Judul',
+                'type'=>'text',
+            ],
+            [
+                'name'=>'link',
+                'type'=>'text',
+            ],
+            [
+                'name'=>'summary',
+                'type'=>'text',
+            ],
+            [
+                'name'=>'konten',
+                'type'=>'richtext',
+            ],
+            [
+                'name'=>'photo',
+                'type'=>'file',
+                'uploadFolder'=>'@webroot/uploads/blog',
+                'isImage'=>true,
+                'hint'=>'Ukuran gambar yang optimal adalah 360x257 pixel',
+            ],
+            [
+                'name'=>'date',
+                'type'=>'datepicker',
+            ],
+            
+        ];
+    }
 
 }

@@ -12,7 +12,7 @@ use yii\widgets\ListView;
 /** @var app\models\TestimoniSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Testimonis';
+$this->title = 'Testimoni';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
     ?>
+    
 
     <div class="container">
         <div class="row">
@@ -32,6 +33,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     'pager' => ['options' => ['class' => 'pagination col-md-12', 'maxButtonCount' => 4]],
                     'itemView' => 'blog/listNews',
                     'summary' => '',
+                    'itemOptions' => [
+                        'class' => 'card',
+                    ],
+                    'options' => [
+                        'class' => 'card-body',
+                    ],
+                    'options' => [
+                        'class' => 'card-title',
+                    ],
+                    'options' => [
+                        'class' => 'row',
+                    ],
+
+                    
+                    'summary'=>'',
                 ]); ?>
 
             </div>
@@ -42,21 +58,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
 
-<doiv class="col-md-4">
-    <div class="card mb-4 box-shadow">
-        <img class="card-img-top" data-src="/site/css/template alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php /*<div class="testimoni-index">
 

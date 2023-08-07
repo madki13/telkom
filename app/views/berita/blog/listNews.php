@@ -3,12 +3,13 @@
 use yii\helpers\Url;
 
 $photo = $model->photo;
-if(empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'].$photo)){
+if (empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'] . $photo)) {
     $photo = Url::to('@web/images/project-1.jpg');
 }
 
 ?>
-<div class="col-4" data-key="<?= $key; ?>">
+
+<!-- <div class="col-4" data-key="<?= $key; ?>">
     <div class="berita-index animate-box fadeInUp animated-fast">
         <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>">
             <img class="img-responsive" src="<?= $photo ?>" />
@@ -19,5 +20,21 @@ if(empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'].$photo)){
             <span class="posted_on"><?= $model->tanggal_terbit ?></span>
             <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" class="btn btn-primary" judul="<?= $model->judul ?>">Selengkapnya</a>
         </div>
+    </div>
+</div> -->
+
+
+<div class="card" style="width: 18rem;">
+    <div class="berita-index animate-box fadeInUp animated-fast">
+        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>">
+            <img class="img-responsive" src="<?= $photo ?>" />
+        </a>
+        <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>">
+
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><?= $model->judul ?></h5>
+        <p class="card-text"><?= $model->summary ?></p>
+        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" class="btn btn-primary" judul="<?= $model->judul ?>">Selengkapnya</a>
     </div>
 </div>
