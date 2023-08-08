@@ -1,4 +1,4 @@
-<?php
+ q<?php
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap4\ActiveForm $form */
@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    
-    .utama {
+
+.utama {
     font-family: 'Poppins', sans-serif;
     margin: 150px auto auto;
 }

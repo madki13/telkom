@@ -47,6 +47,17 @@ class TestimoniController extends Controller
         ]);
     }
 
+    public function actionAdmin()
+    {
+        $searchModel = new TestimoniSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('Admin', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single Testimoni model.
      * @param int $id ID
@@ -113,7 +124,7 @@ class TestimoniController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['admin']);
     }
 
     /**
