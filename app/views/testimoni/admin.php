@@ -1,46 +1,45 @@
 <?php
 
-use app\models\Berita;
+use app\models\Testimoni;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use yii\widgets\ListView;
-
 
 /** @var yii\web\View $this */
-/** @var app\models\BeritaSearch $searchModel */
+/** @var app\models\TestimoniSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'admin';
+$this->title = 'Testimoni';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="testimoni-index">
 
-<p>
-    <?= Html::a('Create Layanan', ['create'], ['class' => 'btn btn-success']) ?>
-</p>
+    <h1><?= Html::encode($this->title) ?></h1>
 
+    <p>
+        <?= Html::a('Create Testimoni', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-<div class="Berita-admin">
-<?= GridView::widget([
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'judul',
-            'konten:ntext',
-            'penulis',
-            'tanggal_terbit',
-            //'foto',
+            'nama:ntext',
+            'testimoni',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Berita $model, $key, $index, $column) {
+                'urlCreator' => function ($action, Testimoni $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],
         ],
     ]); ?>
+
+
 </div>

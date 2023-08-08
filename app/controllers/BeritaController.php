@@ -63,6 +63,30 @@ class BeritaController extends Controller
         return $this->render('index', ['listDataProvider' => $provider]);
     }
 
+        public function actionAdmin()
+    {
+        $searchModel = new BeritaSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('admin', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+
+
+        $provider = new ArrayDataProvider([
+            'allModels' => $this->getFakedModels(),
+            'pagination' => [
+                'pageSize' => 5
+            ],
+            'sort' => [
+                'attributes' => ['id'],
+            ],
+        ]);
+
+        return $this->render('admin', ['listDataProvider' => $provider]);
+    }
+
     /**
      * Displays a single Berita model.
      * @param int $id ID
@@ -130,7 +154,7 @@ class BeritaController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['admin']);
     }
 
     /**
@@ -161,5 +185,6 @@ class BeritaController extends Controller
         $this->view->title = 'Posts List';
         return $this->render('list', ['listDataProvider' => $dataProvider]);
     }
+
 
 }

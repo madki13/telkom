@@ -16,6 +16,10 @@ $this->title = 'Testimoni';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<p>
+    <?= Html::a('Create testimoni', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+
 <div id="testimoni-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -34,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'itemView' => 'blog/listNews',
                     'summary' => '',
                     'itemOptions' => [
-                        'class' => 'card',
+                        'class' => 'col-4',
                     ],
                     'options' => [
                         'class' => 'card-body',

@@ -11,58 +11,103 @@ use yii\captcha\Captcha;
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    
+    .utama {
+    font-family: 'Poppins', sans-serif;
+    margin: 150px auto auto;
+}
 
-        <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
-        </div>
+.text-1 {
+    font-weight: 600;
+    font-size: 45px;
+    justify-content: center;
+    width: 330px;
+    margin: 0px auto 30px auto;
+}
 
-        <p>
-            Note that if you turn on the Yii debugger, you should be able
-            to view the mail message on the mail panel of the debugger.
-            <?php if (Yii::$app->mailer->useFileTransport): ?>
-                Because the application is in development mode, the email is not sent but saved as
-                a file under <code><?= Yii::getAlias(Yii::$app->mailer->fileTransportPath) ?></code>.
-                Please configure the <code>useFileTransport</code> property of the <code>mail</code>
-                application component to be false to enable email sending.
-            <?php endif; ?>
-        </p>
+.kolom-kolom {
+  width: 80%;
+  display: flex;
+  gap: 20px;
+  margin: 20px auto;
+  justify-content: center;
+  text-align: center;
+  height: 220px;
+  
+}
 
-    <?php else: ?>
+.kolom-1,
+.kolom-2 {
+  background-color: #f8ffff;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: #03363d;
+}
 
-        <p>
-            If you have business inquiries or other questions, please fill out the following form to contact us.
-            Thank you.
-        </p>
+.judul {
+  font-weight: 500;
+  font-size: 27px;
+  padding-top: 17px;
+}
 
-        <div class="row">
-            <div class="col-lg-5">
+.isi {
+  font-weight: 400;
+  font-size: 15px;
+  padding: 15px 27px 15px 27px;
+  text-align: center;
+}
 
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+.tombol {
+  margin-top: 15px;
+}
 
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+.tombol-whatsapp,
+.tombol-email {
+  text-decoration: none;
+  color: #f8ffff;
+  background-color: #03363d;
+  padding: 15px 25px 15px 25px;
+  border-radius: 50px;
+}
 
-                    <?= $form->field($model, 'email') ?>
+.tombol-whatsapp:hover,
+.tombol-email:hover {
+    text-decoration: none;
+    background-color: rgba(23,73,77, 0.9);
+    color: rgba(255,255,255, 0.9)
+}
 
-                    <?= $form->field($model, 'subject') ?>
+.tombol-whatsapp:active,
+.tombol-email:active{
+    background-color:rgb(23,73,77);
+}
 
-                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    ]) ?>
+</style>
+</head>
 
-                    <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                    </div>
-
-                <?php ActiveForm::end(); ?>
-
-            </div>
-        </div>
-
-    <?php endif; ?>
+<div class="utama">
+<div class="text-1">Hubungi Kami</div> 
+  <div class="kolom-kolom">
+    <div class="kolom-1">
+      <div class="judul">Whatsapp</div>
+      <div class="isi">Silakan hubungi kami melalui WhatsApp untuk pertanyaan atau informasi lebih lanjut.</div>
+      <div class="tombol">
+        <a class="tombol-whatsapp" href="https://wa.me/081319262710">Whatsapp</a>
+      </div>
+    </div>
+    <div class="kolom-2">
+      <div class="judul">Email</div>
+      <div class="isi">Kami tersedia melalui email jika Anda memerlukan bantuan atau informasi lebih lanjut.</div>
+      <div class="tombol">
+        <a class="tombol-email" href="mailto:raaaaygbs@gmail.com">Email</a>
+    </div>
+  </div>
 </div>

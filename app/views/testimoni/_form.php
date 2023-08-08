@@ -18,7 +18,7 @@ use yii\captcha\Captcha;
 
     <?= $form->field($model, 'testimoni')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?>
+    <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?> 
 
     <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
         'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',

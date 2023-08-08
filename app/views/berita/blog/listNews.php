@@ -3,9 +3,7 @@
 use yii\helpers\Url;
 
 $photo = $model->photo;
-if (empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'] . $photo)) {
-    $photo = Url::to('@web/images/project-1.jpg');
-}
+
 
 ?>
 
@@ -26,9 +24,6 @@ if (empty($photo) || !is_file($_SERVER['DOCUMENT_ROOT'] . $photo)) {
 
 <div class="card" style="width: 18rem;">
     <div class="berita-index animate-box fadeInUp animated-fast">
-        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>">
-            <img class="img-responsive" src="<?= $photo ?>" />
-        </a>
         <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>">
 
     </div>
