@@ -137,13 +137,13 @@ AppAsset::register($this);
                     <div class="pr-xl-4">
                         <p>ini adalah web profile divisi is & ipn </p>
                         <!-- Rights-->
-                        <p class="rights"><span>©  </span><span class="copyright-year">2023</span><span> </span><span>telkom</span><span>. </span><span>All Rights Reserved.</span></p>
+                        <p class="rights"><span>©  </span><span class="copyright-year">2023</span><span> </span><span>PT Telekomunikasi Indonesia</span><span>. </span><span>All Rights Reserved.</span></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h5>Hubungi Kami</h5>
                     <dl class="contact-list">
-                        <dt>Address:</dt>
+                        <dt>Alamat:</dt>
                         <dd><a href="https://goo.gl/maps/P1r7CRGWcEmkZnWG7"> Jl. Medan Merdeka Sel. No.11, RT.11/RW.2, Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110
                             </a></dd>
                     </dl>
@@ -152,7 +152,7 @@ AppAsset::register($this);
                         <dd><a href="mailto:corporate_comm@telkom.co.id">corporate_comm@telkom.co.id</a></dd>
                     </dl>
                     <dl class="contact-list">
-                        <dt>phones:</dt>
+                        <dt>Nomor Telp:</dt>
                         <dd><a href="https://wa.me/082211371673">+62 822-1137-1673</a></dd>
                     </dl>
                 </div>
@@ -187,3 +187,4 @@ AppAsset::register($this);
 
 </html>
 <?php $this->endPage() ?>
+
