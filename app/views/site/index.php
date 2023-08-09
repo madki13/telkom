@@ -54,7 +54,7 @@ $this->title = 'My Yii Application';
 <body>
     <div class="background-container"></div>
     <div class="text-container">
-        <h1>TELKOM INDONESIA</h1>
+        <h1>TELKOM  INDONESIA </h1>
         <p>the world in your hand</p>
     </div>
     <img class="logo-telkom" src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/640px-Telkom_Indonesia_2013.svg.png" alt="Logo Telkom Indonesia">
