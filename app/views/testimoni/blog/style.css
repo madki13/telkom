@@ -111,4 +111,12 @@
         top: 30px;
         margin-left: 850px;
     }
+
+    .round-image {
+        border-radius: 50%;
+        width: 150px; /* Atur ukuran sesuai kebutuhan */
+        height: 150px; /* Atur ukuran sesuai kebutuhan */
+        margin: 0 auto; /* Untuk membuat gambar berada di tengah secara horizontal */
+        display: block;
+    }
 </style>

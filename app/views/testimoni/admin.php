@@ -10,7 +10,8 @@ use yii\grid\GridView;
 /** @var app\models\TestimoniSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Testimoni';
+$this->title = 'admin';
+$this->params['breadcrumbs'][] = ['label' => 'Testimoni', 'url' => ['/testimoni']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="testimoni-index">

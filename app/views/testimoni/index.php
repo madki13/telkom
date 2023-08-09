@@ -17,7 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <p>
-    <?= Html::a('Create testimoni', ['create'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Buat testimoni', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
+
+<p>
+    <?= Html::a('edit testimoni', ['admin'], ['class' => 'btn btn-success']) ?>
 </p>
 
 <div id="testimoni-index">

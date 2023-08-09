@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /** @var app\models\Testimoni $model */
 
 $this->title = 'Create Testimoni';
-$this->params['breadcrumbs'][] = ['label' => 'Testimonis', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Testimoni', 'url' => ['/testimoni']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="testimoni-create">

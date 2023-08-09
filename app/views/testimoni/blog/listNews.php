@@ -6,6 +6,17 @@ $photo = $model->photo;
 
 ?>
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="css.css" type="text/css">
+
+</head>
+
 <body>
     <section class="testi py-5" id="page4">
         <div class="container">
@@ -22,18 +33,13 @@ $photo = $model->photo;
             <div class="container1">
                 <div class="row">
                     <div class="col ">
-                        <div class="card" style="width: 20rem;">
-                        <img src="<?= $photo ?>" class="card-img-top" alt="...">
+                        <div class="card" style="width: 20rem; text-align: center;">
+                            <div class="profile-image" style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto;">
+                                <img src="<?= $photo ?>" alt="Profile Photo" style="width: 90%; height: 90%; object-fit: cover; border-radius: 50%;">
+                            </div>
 
                             <div class="card-body text-justify">
                                 <p class="namecoment"><?= $model->tanggal_terbit ?></p>
-                                <div class="stars1">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <p class="coment"><sup><i class="fa fa-quote-left"></i></sup><?= $model->testimoni ?></sup></p>
                             </div>
                         </div>
