@@ -53,7 +53,7 @@ class Testimoni extends \app\components\ActiveRecord
             'testimoni' => 'Testimoni',
             'photo' => 'Photo',
             'tanggal_terbit' => 'Tanggal Terbit',
-            'tanggal_diperbarui`    2' => 'Tanggal diperbarui',
+            'tanggal_diperbarui' => 'Tanggal diperbarui',
             'verifyCode' => 'Kode verifikasi',
         ];
     }
