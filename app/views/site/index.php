@@ -12,15 +12,13 @@ $this->title = 'My Yii Application';
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0; 
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         .background-container {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -29,34 +27,42 @@ $this->title = 'My Yii Application';
             background-size: cover;
             background-repeat: no-repeat;
             filter: brightness(40%);
+            z-index: -1;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 0;
+            text-align: center;
         }
 
         .text-container {
-            position: relative;
-            z-index: 1; 
-            color: white; 
+            color: white;
             font-size: 24px;
-            text-align: center;
-            padding: 60px; 
-            max-width: 80%; 
-            margin: 100px;
+            padding: 40px;
+            max-width: 80%;
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .logo-telkom {
-            position: absolute;
-            top: 70px;
-            left: 20px;
             width: 100px;
-            z-index: 2; 
+            margin: -70px;
+            margin-left: -1200px;
+            margin-top: -100px;
         }
     </style>
 </head>
 <body>
     <div class="background-container"></div>
-    <div class="text-container">
-        <h1>TELKOM  INDONESIA </h1>
-        <p>the world in your hand</p>
+    <div class="content-container">
+        <img class="logo-telkom" src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/640px-Telkom_Indonesia_2013.svg.png" alt="Logo Telkom Indonesia">
+        <div class="text-container">
+            <h1>TELKOM INDONESIA</h1>
+            <p>the world in your hand</p>
+        </div>
     </div>
-    <img class="logo-telkom" src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/640px-Telkom_Indonesia_2013.svg.png" alt="Logo Telkom Indonesia">
 </body>
 </html>
