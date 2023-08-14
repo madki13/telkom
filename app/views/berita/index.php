@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'options' => [
                 'class' => 'row',
             ],
-            'summary'=>'',
+            'summary'=>'',   
         ]); ?>
     </div>
 </div> 
