@@ -22,9 +22,9 @@ $photo = $model->photo;
 </div> -->
 
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" >
     <div class="berita-index animate-box fadeInUp animated-fast">
-        <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>">
+        <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>>
 
     </div>
     <div class="card-body">

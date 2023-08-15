@@ -25,6 +25,7 @@ $this->title = $model->judul;
             <div class="col-lg-12 col-md-12">
                 <div class="berita-view">
                     <div class="berita-text">
+                        <img src="<?= $photo ?>">
                         <h3><?= $model->judul ?></h3>
                         <span class="posted_on"><?= $model->tanggal_terbit ?></span>
                         <div class="content">
