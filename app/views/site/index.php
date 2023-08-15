@@ -5,20 +5,62 @@
 $this->title = 'My Yii Application';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contoh Menampilkan Background dengan PHP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,600&family=REM:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
+       
+body, h1, h2, p {
+    margin: 30px;
+    padding: 30px;
+    color: white;
+}
 
-        .background-container {
-            position: fixed;
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'REM', sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: #333;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+
+
+    
+}
+
+.background-container {
+    position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -27,42 +69,70 @@ $this->title = 'My Yii Application';
             background-size: cover;
             background-repeat: no-repeat;
             filter: brightness(40%);
-            z-index: -1;
-        }
+            z-index: -1; 
+}
 
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 100px 0;
-            text-align: center;
-        }
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
 
-        .text-container {
-            color: white;
-            font-size: 24px;
-            padding: 40px;
-            max-width: 80%;
-            margin: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
+.feature {
+    flex-basis: 30%;
+    text-align: center;
+}
 
-        .logo-telkom {
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo-telkom {
             width: 100px;
-            margin: -70px;
-            margin-left: -1200px;
+            margin: 100px;
+            margin-left: 100px;
             margin-top: -100px;
-        }
+            
+}
+
     </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Telkom Indonesia</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                
+            </ul>
+        </nav>
+    </header>
     <div class="background-container"></div>
-    <div class="content-container">
-        <img class="logo-telkom" src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/640px-Telkom_Indonesia_2013.svg.png" alt="Logo Telkom Indonesia">
-        <div class="text-container">
-            <h1>TELKOM INDONESIA</h1>
-            <p>the world in your hand</p>
+    <section class="hero">
+        <h1>Selamat Datang di Telkom Indonesia</h1>
+        <p>Menyediakan layanan terbaik untuk kebutuhan komunikasi dan teknologi Anda.</p>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h2>Layanan Terbaik</h2>
+            <p>Kami menyediakan berbagai layanan terbaik untuk memenuhi kebutuhan Anda.</p>
         </div>
-    </div>
+        <div class="feature">
+            <h2>Produk Unggulan</h2>
+            <p>Dapatkan produk-produk unggulan kami yang inovatif dan berkualitas tinggi.</p>
+        </div>
+        <div class="feature">
+            <h2>Dukungan 24/7</h2>
+            <p>Tim dukungan kami siap membantu Anda 24 jam sehari, 7 hari seminggu.</p>
+        </div>
+    </section>
+    <footer>
+        <p>Hak Cipta © 2023 Telkom Indonesia</p>
+    </footer>
 </body>
 </html>
