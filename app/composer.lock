@@ -263,6 +263,7 @@
                 "issues": "https://github.com/2amigos/yii2-file-upload-widget/issues",
                 "source": "https://github.com/2amigos/yii2-file-upload-widget/tree/master"
             },
+            "abandoned": true,
             "time": "2018-09-06T19:15:49+00:00"
         },
         {
@@ -328,6 +329,7 @@
                 "issues": "https://github.com/2amigos/yii2-gallery-widget/issues",
                 "source": "https://github.com/2amigos/yii2-gallery-widget/tree/master"
             },
+            "abandoned": true,
             "time": "2017-09-09T16:01:44+00:00"
         },
         {
