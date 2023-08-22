@@ -21,8 +21,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/style.css',
+        'css/swiper-bundle.min.css'
     ];
     public $js = [
+        'js/script.js',
+        'js/swiper-bundle.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -17,10 +17,10 @@ $photo = $model->photo;
     <title>Responsive Testimonial Slider</title>
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/app/views/testimoni/blog/css/swiper-bundle.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/app/views/testimoni/blog/css/style.css" />
 
     <!-- Boxicons CSS -->
     <link
@@ -54,9 +54,9 @@ $photo = $model->photo;
     </section>
 
     <!-- Swiper JS -->
-    <script src="js/swiper-bundle.min.js"></script>
+    <script src="/app/views/testimoni/blog/js/swiper-bundle.min.js"></script>
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="/app/views/testimoni/blog/js/script.js"></script>
   </body>
 </html>
 
@@ -101,6 +101,7 @@ $photo = $model->photo;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 </body>  -->
+
 
 
 <!-- <div class="card" style="width: 18rem;">

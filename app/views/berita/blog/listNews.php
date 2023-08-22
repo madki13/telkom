@@ -79,7 +79,7 @@ $photo = $model->photo;
 </head>
 
 
-<div class="card">
+<div class="card" >
     <div class="img-top berita-index animate-box fadeInUp animated-fast">
         <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>>
 
@@ -91,3 +91,4 @@ $photo = $model->photo;
         <a class="tombol-selengkapnya" href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" class="btn btn-primary" judul="<?= $model->judul ?>">Selengkapnya</a>
     </div>
 </div>
+
