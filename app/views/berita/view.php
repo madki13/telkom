@@ -16,15 +16,12 @@ YiiAsset::register($this);
 <div id="berita-view">
     <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-img-container">
-                        <img src="<?= Yii::getAlias('@web') . '/' . $model->photo ?>" class="card-img" alt="<?= Html::encode($model->judul) ?>">
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title"><?= Html::encode($model->judul) ?></h1>
-                        <p class="card-text posted_on"><?= $model->tanggal_terbit ?></p>
-                        <div class="card-text content">
+            <div class="col-lg-12 col-md-12">
+                <div class="berita-view">
+                    <div class="berita-text">
+                        <h3><?= $model->judul ?></h3>
+                        <span class="posted_on"><?= $model->tanggal_terbit ?></span>
+                        <div class="content">
                             <?= $model->konten ?>
                         </div>
                     </div>
