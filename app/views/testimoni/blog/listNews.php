@@ -6,59 +6,147 @@ $photo = $model->photo;
 
 ?>
 
+<style>
+  @media (max-width:991.98px) {
+    .padding {
+      padding: 1.5rem
+    }
+  }
 
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Testimonial Slider</title>
+  @media (max-width:767.98px) {
+    .padding {
+      padding: 1rem
+    }
+  }
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="/app/views/testimoni/blog/css/swiper-bundle.min.css" />
+  .padding {
+    padding: 5rem
+  }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/app/views/testimoni/blog/css/style.css" />
+  .card {
+    position: relative;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
+    height: 240px;
+    /* Sesuaikan tinggi sesuai preferensi Anda */
+    overflow: hidden;
+    /* Atur overflow agar isi yang panjang tidak terlihat di luar card */
 
-    <!-- Boxicons CSS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section class="container">
-      <div class="testimonial mySwiper">
-        <div class="testi-content swiper-wrapper">
-          <div class="slide swiper-slide">
-            <img src="<?= $photo ?>" alt="" class="image" />
-            <p>
-            <?= $model->testimoni ?>
-            </p>
+  }
 
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
+  .template-demo p {
+    margin: 0;
+    /* Hapus margin default untuk menghindari jarak ekstra */
+    overflow: hidden;
+    /* Atur overflow untuk memotong teks yang terlalu panjang */
+    text-overflow: ellipsis;
+    /* Tampilkan elipsis (...) untuk teks yang terpotong */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Batasi jumlah baris yang ditampilkan */
+    -webkit-box-orient: vertical;
+  }
 
-            <div class="details">
-              <span class="name"><?= $model->nama ?></span>
-              <span class="job"><?= $model->tanggal_terbit ?></span>
-            </div>
-          </div>
-          
-        </div>
-        <div class="swiper-button-next nav-btn"></div>
-        <div class="swiper-button-prev nav-btn"></div>
-        <div class="swiper-pagination"></div>
+
+  .card .card-body {
+    padding: 1rem 1rem;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+  }
+
+  p {
+    font-size: 0.875rem;
+    margin-bottom: .5rem;
+    line-height: 1.5rem
+  }
+
+  h4 {
+    line-height: .2 !important;
+  }
+
+  .profile {
+    margin-top: 16px;
+    margin-left: 11px;
+  }
+
+  .profile-pic {
+    width: 40px;
+  }
+
+  .cust-name {
+    font-size: 18px;
+  }
+
+  .cust-profession {
+    font-size: 10px;
+  }
+
+
+
+  .items {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 100px
+  }
+
+  .slick-slide {
+    margin: 10px
+  }
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<div class="items">
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png"></h4>
+
+      <div class="template-demo">
+        <p><?= $model->testimoni ?></p>
       </div>
-    </section>
 
-    <!-- Swiper JS -->
-    <script src="/app/views/testimoni/blog/js/swiper-bundle.min.js"></script>
-    <!-- JavaScript -->
-    <script src="/app/views/testimoni/blog/js/script.js"></script>
-  </body>
-</html>
+      <hr>
+
+      <div class="row">
+
+        <div class="col-sm-2">
+
+          <img class="profile-pic" src="<?= $photo ?>">
+
+        </div>
+
+        <div class="col-sm-10">
+          <div class="profile">
+            <h4 class="cust-name"><?= $model->nama ?></h4>
+            <p class="cust-profession"><?= $model->tanggal_terbit ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="<?= Yii::getAlias('@web/js/script.js') ?>"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</div>
 
 <!-- <body>
     <section class="testi py-5" id="page4">
