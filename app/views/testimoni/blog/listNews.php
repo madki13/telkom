@@ -105,12 +105,56 @@ $photo = $model->photo;
   .slick-slide {
     margin: 10px
   }
+
+  .testimoni-carousel {
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .testimoni-slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .testimoni-carousel.active .testimoni-slide {
+    animation: slideshow 10s infinite;
+  }
+
+  @keyframes slideshow {
+
+    0%,
+    100% {
+      transform: translateX(0%);
+    }
+
+    25% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(-200%);
+    }
+
+    75% {
+      transform: translateX(-300%);
+    }
+  }
 </style>
 
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
 
 
 <div class="items">
