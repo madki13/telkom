@@ -64,7 +64,7 @@ $photo = $model->photo;
 
   .card-body {
     flex: 1 1 auto;
-    padding: 1.25rem
+    padding: 1rem
   }
 
   p {
@@ -153,6 +153,8 @@ $photo = $model->photo;
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -161,7 +163,7 @@ $photo = $model->photo;
 
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title"><img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png"></h4>
+      <h4 class="card-title"><img src="<?= Yii::getAlias('@web/image/quote-left.png') ?>"></h4>
 
       <div class="template-demo">
         <p><?= $model->testimoni ?></p>
