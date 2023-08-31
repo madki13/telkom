@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php
                 $dataProvider->pagination->pageSize = 6; // Batasi jumlah testimoni per halaman
                 $totalCount = $dataProvider->getTotalCount();
-                $maxButtonCount = min($totalCount, 10); // Batasi jumlah tombol pagination
+                $maxButtonCount = min($totalCount, 100); // Batasi jumlah tombol pagination
 
                 echo ListView::widget([
                     'dataProvider' => $dataProvider,
