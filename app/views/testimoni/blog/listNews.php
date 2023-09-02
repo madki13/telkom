@@ -1,9 +1,14 @@
 <?php
 
+use yii\helpers\Html;
 use yii\helpers\Url;
+use Yii;
 
 $photo = $model->photo;
 
+if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->id) {
+  echo Html::a('Edit Testimoni', ['update', 'id' => $model->id], ['class' => 'btn btn-success']);
+}
 ?>
 
 <style>
@@ -80,10 +85,14 @@ $photo = $model->photo;
   .profile {
     margin-top: 16px;
     margin-left: 11px;
+    align-items: center; /* Pusatkan vertikal */
   }
 
   .profile-pic {
-    width: 40px;
+    width: 50px;
+    height: 50px; /* Sesuaikan ukuran sesuai kebutuhan */
+    object-fit: cover; /* Hindari distorsi gambar dengan memotong atau mengisi ruang */
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
   }
 
   .cust-name {
@@ -170,7 +179,7 @@ $photo = $model->photo;
 
         <div class="col-sm-2">
 
-          <img class="profile-pic" src="<?= $photo ?>">
+          <img class="profile-pic" src="<?= Url::to('@web/' . $photo) ?>">
 
         </div>
 
@@ -184,9 +193,11 @@ $photo = $model->photo;
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <!-- <body>
     <section class="testi py-5" id="page4">

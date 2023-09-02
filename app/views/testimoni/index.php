@@ -8,6 +8,8 @@ use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\bootstrap4\Carousel;
 use yii\helpers\ArrayHelper;
+use yii\bootstrap4\LinkPager;
+
 
 
 
@@ -43,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 echo ListView::widget([
                     'dataProvider' => $dataProvider,
                     'pager' => [
-                        'class' => 'yii\bootstrap4\LinkPager',
+                        'class' => LinkPager::class,
                         'options' => ['class' => 'pagination col-md-12', 'maxButtonCount' => $maxButtonCount],
                         'prevPageLabel' => '<i class="fas fa-angle-left"></i>',
                         'nextPageLabel' => '<i class="fas fa-angle-right"></i>',
