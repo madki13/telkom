@@ -1,49 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div class="items">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Testimonial Carousel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><img src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png"></h4>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-center m-auto">
-                <h2>Testimonials</h2>
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Carousel -->
-                    <div class="carousel-inner">
-                        <div class="item carousel-item active">
-                            <div class="img-box"><img src="https://i.ibb.co/d5DY64w/img1.jpg" alt=""></div>
-                            <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-                            <p class="overview"><b>Jennifer Smith</b>, Office Worker</p>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="img-box"><img src="https://i.ibb.co/5FF1vqz/img2.jpg" alt=""></div>
-                            <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-                            <p class="overview"><b>Dauglas McNun</b>, Financial Advisor</p>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="img-box"><img src="https://i.ibb.co/Trv7hDv/img3.jpg" alt=""></div>
-                            <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
-                            <p class="overview"><b>Hellen Wright</b>, Athelete</p>
-                        </div>
-                    </div>
-                    <!-- Carousel Controls -->
- 
+            <div class="template-demo">
+                <p>Online reviews can make or break a customer's decision to make a purchase. Read about these customer review sites where your customers'</p>
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-sm-2">
+
+                    <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
+
                 </div>
+
+                <div class="col-sm-10">
+
+                    <div class="profile">
+
+                        <h4 class="cust-name">Delbert Simonas</h4>
+                        <p class="cust-profession">Store Owner</p>
+
+                    </div>
+
+
+                </div>
+
+
             </div>
         </div>
     </div>
-</body>
 
-</html>
+
+    
+
+
+
+</div>

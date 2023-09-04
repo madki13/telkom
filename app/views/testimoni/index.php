@@ -8,6 +8,8 @@ use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\bootstrap4\Carousel;
 use yii\helpers\ArrayHelper;
+use yii\bootstrap4\LinkPager;
+
 
 
 
@@ -30,20 +32,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <div id="testimoni-index">
-
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
-    
 
     <div class="container">
         <div class="row">
             <div class="row">
                 <?php
+                $dataProvider->pagination->pageSize = 6; // Batasi jumlah testimoni per halaman
+                $totalCount = $dataProvider->getTotalCount();
+                $maxButtonCount = min($totalCount, 100); // Batasi jumlah tombol pagination
+
                 echo ListView::widget([
                     'dataProvider' => $dataProvider,
-                    'pager' => ['options' => ['class' => 'pagination col-md-12', 'maxButtonCount' => 4]],
+                    'pager' => [
+                        'class' => LinkPager::class,
+                        'options' => ['class' => 'pagination col-md-12', 'maxButtonCount' => $maxButtonCount],
+                        'prevPageLabel' => '<i class="fas fa-angle-left"></i>',
+                        'nextPageLabel' => '<i class="fas fa-angle-right"></i>',
+                    ],
                     'itemView' => 'blog/listNews',
                     'summary' => '',
                     'itemOptions' => [
@@ -58,19 +64,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     'options' => [
                         'class' => 'row',
                     ],
-
-                    
-                    'summary'=>'',
+                    'summary' => '',
                 ]); ?>
-
             </div>
-
-
         </div>
-
     </div>
-
 </div>
+
+
+
+
 
 
 <?php /*<div class="testimoni-index">
