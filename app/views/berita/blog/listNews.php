@@ -1,6 +1,9 @@
 <?php
 
 use yii\helpers\Url;
+use yii\helpers\Html;
+use Yii;
+
 
 $photo = $model->photo;
 
@@ -75,13 +78,19 @@ $photo = $model->photo;
     margin: 0;
     }
 
+    
+
     </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
 
 <div class="card" >
     <div class="img-top berita-index animate-box fadeInUp animated-fast">
-        <img class="card-img-top" src="<?= $photo ?>" alt="" <?= $model->judul ?>>
+        <img class="card-img-top" src="<?= Url::to('@web/' . $photo) ?>" alt="" <?= $model->judul ?>>
 
     </div>
 

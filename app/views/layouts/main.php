@@ -89,7 +89,7 @@ AppAsset::register($this);
         }
     </style>
 
-    <header>
+    <header style="background: #B9272B;">
         <?php
         NavBar::begin([
             'brandLabel' => Yii::$app->name,
@@ -131,7 +131,7 @@ AppAsset::register($this);
         </div>
     </main>
 
-    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+    <footer class="section footer-classic context-dark bg-image" style="background: #B9272B;">
         <div class="container">
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">

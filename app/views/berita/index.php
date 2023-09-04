@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\ListView;
+use yii\bootstrap4\LinkPager;
 
 /** @var yii\web\View $this */
 /** @var app\models\BeritaSearch $searchModel */
@@ -15,27 +16,45 @@ $this->title = 'Berita';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div id="berita-index">
-
-    <h1 style="text-align: center;"><?= Html::encode($this->title) ?></h1>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<div id="testimoni-index">
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="container">
-        <?= ListView::widget( [
-            'dataProvider' => $dataProvider,
-            'pager' => ['options' => ['class' => 'pagination col-md-12', 'maxButtonCount'=>4]],
-            'itemView' => 'blog/listNews',
-            'itemOptions' => [
-                'class' => 'col-4',
-            ],
-            'options' => [
-                'class' => 'row',
-            ],
-            'summary'=>'',   
-        ]); ?>
+        <div class="row">
+            <div class="row">
+                <?php
+                $dataProvider->pagination->pageSize = 1     ; // Batasi jumlah testimoni per halaman
+                $totalCount = $dataProvider->getTotalCount();
+                $maxButtonCount = min($totalCount, 100); // Batasi jumlah tombol pagination
+
+                echo ListView::widget([
+                    'dataProvider' => $dataProvider,
+                    'pager' => [
+                        'class' => LinkPager::class,
+                        'options' => ['class' => 'pagination col-md-12', 'maxButtonCount' => $maxButtonCount],
+                        'prevPageLabel' => '<i class="fas fa-angle-left"></i>',
+                        'nextPageLabel' => '<i class="fas fa-angle-right"></i>',
+                    ],
+                    'itemView' => 'blog/listNews',
+                    'summary' => '',
+                    'itemOptions' => [
+                        'class' => 'col-4',
+                    ],
+                    'options' => [
+                        'class' => 'card-body',
+                    ],
+                    'options' => [
+                        'class' => 'card-title',
+                    ],
+                    'options' => [
+                        'class' => 'row',
+                    ],
+                    'summary' => '',
+                ]); ?>
+            </div>
+        </div>
     </div>
-</div> 
+</div>
 
 <?php /* <div class="Berita-index">
     <?= GridView::widget($dataProvider, $searchModel, $this->title,

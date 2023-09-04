@@ -5,11 +5,17 @@ use yii\helpers\Url;
 use Yii;
 
 $photo = $model->photo;
+$isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->id;
 
-if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->id) {
-  echo Html::a('Edit Testimoni', ['update', 'id' => $model->id], ['class' => 'btn btn-success']);
-}
+
+// echo Html::a('Selengkapnya', ['berita/view', 'id' => $model->id], ['class' => 'tombol-selengkapnya btn btn-primary']);
+// 
 ?>
+
+
+
+
+<!-- ini code css nya -->
 
 <style>
   @media (max-width:991.98px) {
@@ -29,6 +35,8 @@ if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->i
   }
 
   .card {
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     display: flex;
     width: 350px;
@@ -68,7 +76,6 @@ if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->i
   }
 
   .card-body {
-    flex: 1 1 auto;
     padding: 1rem
   }
 
@@ -85,14 +92,18 @@ if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->i
   .profile {
     margin-top: 16px;
     margin-left: 11px;
-    align-items: center; /* Pusatkan vertikal */
+    align-items: center;
+    /* Pusatkan vertikal */
   }
 
   .profile-pic {
     width: 50px;
-    height: 50px; /* Sesuaikan ukuran sesuai kebutuhan */
-    object-fit: cover; /* Hindari distorsi gambar dengan memotong atau mengisi ruang */
-    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    height: 50px;
+    /* Sesuaikan ukuran sesuai kebutuhan */
+    object-fit: cover;
+    /* Hindari distorsi gambar dengan memotong atau mengisi ruang */
+    border-radius: 50%;
+    /* Membuat gambar menjadi lingkaran */
   }
 
   .cust-name {
@@ -150,7 +161,51 @@ if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->i
       transform: translateX(-300%);
     }
   }
+
+  .tombol-selengkapnya {
+    text-decoration: none;
+    background-color: #4788C7;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+  }
+
+  .tombol-selengkapnya:hover,
+  .tombol-selengkapnya:focus {
+    opacity: .75;
+    text-decoration: none;
+    color: white;
+  }
 </style>
+
+
+
+
+
+
+
+
+
 
 <head>
 
@@ -187,6 +242,10 @@ if (!Yii::$app->user->isGuest && $model->user_id == Yii::$app->user->identity->i
           <div class="profile">
             <h4 class="cust-name"><?= $model->nama ?></h4>
             <p class="cust-profession"><?= $model->tanggal_terbit ?></p>
+            <!-- <a class="tombol-selengkapnya" href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" class="btn btn-primary" >Selengkapnya</a> -->
+            <?php if ($isOwner) : ?>
+              <?= Html::a('Edit Testimoni', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>
