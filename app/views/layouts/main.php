@@ -185,6 +185,30 @@ AppAsset::register($this);
     <?php $this->endBody() ?>
 </body>
 
+<style>
+    /* Ubah warna navbar */
+    .navbar {
+        background-color: #B9272B !important;
+    }
+
+    /* Ubah warna teks navbar */
+    .navbar-nav .nav-link {
+        color: #ffffff !important;
+    }
+
+    /* Ubah warna footer */
+    .footer-classic {
+        background-color: #B9272B !important;
+    }
+
+    /* Ubah warna teks footer */
+    .footer-classic a,
+    .footer-classic a:focus,
+    .footer-classic a:active {
+        color: #ffffff !important;
+    }
+</style>
+
 </html>
 <?php $this->endPage() ?>
 

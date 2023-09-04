@@ -25,6 +25,9 @@ YiiAsset::register($this);
                     <div class="card-body">
                         <h1 class="card-title display-4"><?= Html::encode($model->judul) ?></h1>
                         <p class="card-text text-muted"><?= $model->tanggal_terbit ?></p>
+                        <!-- Tambahkan Penulis di bawah ini -->
+                        <p class="card-text"><strong>Penulis:</strong> <?= Html::encode($model->penulis) ?></p>
+                        <!-- Akhir Penambahan Penulis -->
                         <div class="card-text lead">
                             <?php
                                 $paragraphs = explode("\n", $model->konten);
@@ -57,5 +60,4 @@ YiiAsset::register($this);
         object-fit: cover;
         /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
     }
-
 </style>
