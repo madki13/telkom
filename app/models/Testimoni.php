@@ -35,7 +35,7 @@ class Testimoni extends \app\components\ActiveRecord
             [['nama', 'testimoni', 'photo'], 'required'],
             [['tanggal_terbit', 'tanggal_diperbarui'], 'safe'],
             [['nama'], 'string', 'max' => 50],
-            [['testimoni'], 'string', 'max' => 255],
+            [['testimoni'], 'string', 'max' => 100],
             [['photo'], 'string', 'max' => 500],
             [['tanggal_terbit', 'tanggal_diperbarui'], 'dateformat'],
             ['verifyCode', 'captcha'],

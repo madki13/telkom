@@ -21,14 +21,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
 .utama {
     font-family: 'Poppins', sans-serif;
-    margin: 150px auto auto;
+    margin: 20px auto auto;
+    text-align: center;
+
 }
 
 .text-1 {
     font-weight: 600;
     font-size: 45px;
-    justify-content: center;
-    width: 330px;
+    width: 100%;
     margin: 0px auto 30px auto;
 }
 
@@ -39,7 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
   margin: 20px auto;
   justify-content: center;
   text-align: center;
-  height: 220px;
+  height: 50%;
+  flex-wrap: wrap;
   
 }
 

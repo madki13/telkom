@@ -16,7 +16,7 @@ use yii\captcha\Captcha;
 
     <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'testimoni')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'testimoni')->textarea(['rows' => 6, 'maxlength' => 77]) ?>
 
     <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?> 
 

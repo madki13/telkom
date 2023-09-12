@@ -19,6 +19,7 @@ use yii\web\UploadedFile;
  * @property string|null $tanggal_terbit
  * @property string|null $tanggal_diperbarui
  * @property string $summary
+ * @property string $link
 
  */
 class Berita extends \app\components\ActiveRecord
@@ -37,7 +38,7 @@ class Berita extends \app\components\ActiveRecord
     public function rules()
     {
         return [
-            [['judul', 'konten', 'penulis', 'tanggal_terbit', 'photo', 'summary'], 'required'],
+            [['judul', 'konten', 'penulis', 'tanggal_terbit', 'photo', 'summary','link'], 'required'],
             [['konten'], 'string'],
             [['created_by', 'updated_by', ], 'integer'],
             [['tanggal_terbit', 'tanggal_diperbarui',], 'safe'],
@@ -45,6 +46,7 @@ class Berita extends \app\components\ActiveRecord
             [['penulis'], 'string', 'max' => 100],
             [['photo'], 'string', 'max' => 500],
             [['summary'], 'string', 'max' => 500],
+            [['link'], 'string', 'max' => 200],
 
         ];
     }
@@ -63,6 +65,7 @@ class Berita extends \app\components\ActiveRecord
             'tanggal_diperbarui' => 'Tanggal diperbarui',
             'photo' => 'foto',
             'summary' => 'ringkasan',
+            'link' => 'link',
 
         ];
     }
@@ -112,6 +115,12 @@ class Berita extends \app\components\ActiveRecord
             ],
             
         ];
+    }
+
+    public static function findByLink($link)
+    {
+        $model = self::find()->where(['link'=>$link])->one();
+        return $model;
     }
 
 }

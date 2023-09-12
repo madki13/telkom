@@ -25,20 +25,25 @@ use yii\widgets\ActiveForm;
 
                     <div class="col-6">
                         <?= $form->field($model, 'konten')->textarea(['rows' => 6]) ?>
-                    </div>  
+                    </div>
 
                     <div class="col-6">
                         <?= $form->field($model, 'penulis')->textInput(['maxlength' => true]) ?>
                     </div>
 
                     <div class="col-6">
+                        <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
+                    </div>
+
+
+                    <div class="col-6">
                         <?= $form->field($model, 'tanggal_terbit')->widget(kartik\date\DatePicker::className(), [
                             'pluginOptions' => [
                                 'format' => 'dd/mm/yyyy',
                             ]
-                        ]) ?> 
+                        ]) ?>
                     </div>
-                    
+
                     <div class="col-6">
                         <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?>
                     </div>

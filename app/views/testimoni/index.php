@@ -53,10 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'itemView' => 'blog/listNews',
                     'summary' => '',
                     'itemOptions' => [
-                        'class' => 'col-4',
-                    ],
-                    'options' => [
-                        'class' => 'card-body',
+                        'class' => 'col-md-4 col-sm-6 col-12', // Sesuaikan dengan preferensi Anda
                     ],
                     'options' => [
                         'class' => 'card-title',

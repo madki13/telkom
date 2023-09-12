@@ -23,7 +23,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="row">
                 <?php
-                $dataProvider->pagination->pageSize = 1     ; // Batasi jumlah testimoni per halaman
+
+
+                $dataProvider->pagination->pageSize = 9; // Batasi jumlah testimoni per halaman
                 $totalCount = $dataProvider->getTotalCount();
                 $maxButtonCount = min($totalCount, 100); // Batasi jumlah tombol pagination
 
