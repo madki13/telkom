@@ -23,7 +23,7 @@ use yii\captcha\Captcha;
                     </div>
 
                     <div class="col-6">
-                    <?= $form->field($model, 'testimoni')->textarea(['rows' => 6, 'maxlength' => 77]) ?>
+                    <?= $form->field($model, 'testimoni')->textarea(['rows' => 6, 'maxlength' => 70])->label('testimoni')->hint('maksimal 70 karakter') ?>
                     </div>
 
                     <div class="col-6">

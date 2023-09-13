@@ -14,13 +14,23 @@ $this->title = $model->judul;
 YiiAsset::register($this);
 ?>
 
+<style>
+    .card-img-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
+}
+
+</style>
+
 <div id="berita-view">
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="<?= Yii::getAlias('@web') . '/' . $model->photo ?>" class="card-img" alt="<?= Html::encode($model->judul) ?>">
+                        <img src="<?= Yii::getAlias('@web') . '/' . $model->photo ?>" style="" class="card-img" alt="<?= Html::encode($model->judul) ?>">
                     </div>
                     <div class="card-body">
                         <h1 class="card-title display-4"><?= Html::encode($model->judul) ?></h1>
@@ -45,13 +55,15 @@ YiiAsset::register($this);
 
 <style>
     .card-img-container {
-        width: 100%;
+        width: 1109px;
         /* Sesuaikan lebar container gambar */
         height: 300px;
         /* Sesuaikan tinggi container gambar */
         overflow: hidden;
         margin-bottom: 10px;
         /* Sesuaikan margin bawah */
+        object-fit: cover;
+
     }
 
     .card-img {

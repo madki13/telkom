@@ -32,9 +32,8 @@ use yii\widgets\ActiveForm;
                     </div>
 
                     <div class="col-6">
-                        <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'link')->textInput(['maxlength' => true])->label('Link')->hint('Tidak boleh menggunakan spasi') ?>
                     </div>
-
 
                     <div class="col-6">
                         <?= $form->field($model, 'tanggal_terbit')->widget(kartik\date\DatePicker::className(), [

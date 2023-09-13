@@ -77,11 +77,54 @@ $photo = $model->photo;
             margin: 0;
         }
 
+
         .small-btn {
             font-size: 14px;
             /* Atur ukuran font sesuai kebutuhan Anda */
-            padding: 6px 12px;
+            padding: 9px 20px 8px;
             /* Atur padding tombol sesuai kebutuhan Anda */
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                max-width: 120px;
+                /* Mengisi lebar layar */
+                max-height: 420px;
+                margin: 0;
+                /* Menghapus margin di perangkat seluler */
+            }
+
+            .small-btn {
+                font-size: 10px;
+                /* Mengurangi ukuran font di perangkat seluler */
+                padding: 6px 12px;
+                /* Mengurangi padding di perangkat seluler */
+                line-height: 1.5;
+
+            }
+
+            .card-img-top {
+                width: 119px;
+                height: 100px;
+                object-fit: cover;
+                margin: 0;
+            }
+
+            .card-title {
+                max-height: 80px;
+                /* Atur tinggi maksimum judul sesuai preferensi Anda */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: small;
+                line-height: 1.5;
+            }
+
+            .card-text {
+                font-size: small;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-height: fit-content;
+            }
         }
     </style>
 
@@ -92,7 +135,7 @@ $photo = $model->photo;
 
 
 <div class="card">
-    <div class="img-top berita-index animate-box fadeInUp animated-fast">
+    <div class="card-img-top">
         <img class="card-img-top" src="<?= Url::to('@web/' . $photo) ?>" alt="" <?= $model->judul ?>>
 
     </div>
