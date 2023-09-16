@@ -16,12 +16,39 @@ YiiAsset::register($this);
 
 <style>
     .card-img-container {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
-}
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
 
+
+    }
+
+    @media (max-width: 768px) {
+        .card-img-container {
+            width: 119px;
+            height: 100px;
+            object-fit: cover;
+            margin: 0;
+        }
+    }
+
+    .card-img-container {
+        width: 100%;
+        /* Sesuaikan lebar container gambar */
+        height: 300px;
+        /* Sesuaikan tinggi container gambar */
+        overflow: hidden;
+        margin-bottom: 10px;
+        /* Sesuaikan margin bawah */
+    }
+
+    .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
+    }
 </style>
 
 <div id="berita-view">
@@ -40,10 +67,10 @@ YiiAsset::register($this);
                         <!-- Akhir Penambahan Penulis -->
                         <div class="card-text lead">
                             <?php
-                                $paragraphs = explode("\n", $model->konten);
-                                foreach ($paragraphs as $paragraph) {
-                                    echo "<p>" . Html::encode($paragraph) . "</p>";
-                                }
+                            $paragraphs = explode("\n", $model->konten);
+                            foreach ($paragraphs as $paragraph) {
+                                echo "<p>" . Html::encode($paragraph) . "</p>";
+                            }
                             ?>
                         </div>
                     </div>
@@ -52,24 +79,3 @@ YiiAsset::register($this);
         </div>
     </div>
 </div>
-
-<style>
-    .card-img-container {
-        width: 1109px;
-        /* Sesuaikan lebar container gambar */
-        height: 300px;
-        /* Sesuaikan tinggi container gambar */
-        overflow: hidden;
-        margin-bottom: 10px;
-        /* Sesuaikan margin bawah */
-        object-fit: cover;
-
-    }
-
-    .card-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Sesuaikan object-fit sesuai kebutuhan (cover/contain/fill) */
-    }
-</style>
