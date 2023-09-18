@@ -117,4 +117,4 @@ class User extends ActiveRecord
     {
         return $this->password === $password;
     }
-}
+}   

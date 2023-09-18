@@ -52,7 +52,7 @@ $this->title = 'My Yii Application';
     }
 
     body {
-      background-image: url('https://i0.wp.com/pmb.ittelkom-pwt.ac.id/wp-content/uploads/2020/06/TELKOM-LANDMARK-TOWER-2.jpg?ssl=1');
+      background-image: url('https://harianterkini.com/wp-content/uploads/2023/01/Artikel-HT-16-IKN.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -64,7 +64,7 @@ $this->title = 'My Yii Application';
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 250%;
       background-color: rgba(0, 0, 0, 0.5);
       filter: brightness(80%);
       z-index: -1;
@@ -151,6 +151,62 @@ $this->title = 'My Yii Application';
     </section>
   </div>
   </div>
+
+  <!-- Tambahkan sebelum header atau di dalam konten sesuai kebutuhan -->
+<div class="container mt-5">
+  <h2 class="text-center">Struktur Jabatan Perusahaan</h2>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <img src="https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/06/19/Mr-Waduh-Thomas-1215251562.jpg" class="card-img-top rounded-circle" alt="Anggota Perusahaan 1">
+        <div class="card-body">
+          <h5 class="card-title">Mr Waduh</h5>
+          <p class="card-text">Jabatan: Waduh</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <img src="https://joglosemarnews.com/images/2020/12/jeremy-thomas.jpg" class="card-img-top rounded-circle" alt="Anggota Perusahaan 2">
+        <div class="card-body">
+          <h5 class="card-title">Mr Jon wik</h5>
+          <p class="card-text">Jabatan: Aktor Film</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajxpFPyxf3nlN1_q_WgqrFZb2XieGI3kNkQ&usqp=CAU" class="card-img-top rounded-circle" alt="Anggota Perusahaan 3">
+        <div class="card-body">
+          <h5 class="card-title">Jajang supryadi</h5>
+          <p class="card-text">Jabatan: Pengamen Priok</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+ /*.card {
+    background-color: #ffddddff; /* Menambahkan latar belakang warna #ffddddff pada card */
+  
+
+  .card-img-top {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Untuk membuat gambar berada di tengah kartu */
+  }
+
+  .card-title, .card-text {
+    color: black; /* Mengubah warna teks menjadi hitam */
+  }
+</style>
+
+
 
 
   </div>
