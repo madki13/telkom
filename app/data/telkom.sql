@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 07, 2023 at 02:27 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Waktu pembuatan: 07 Sep 2023 pada 13.28
+-- Versi server: 8.0.30
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_assignment`
+-- Struktur dari tabel `auth_assignment`
 --
 
 CREATE TABLE `auth_assignment` (
@@ -53,7 +53,7 @@ CREATE TABLE `auth_assignment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_assignment`
+-- Dumping data untuk tabel `auth_assignment`
 --
 
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item`
+-- Struktur dari tabel `auth_item`
 --
 
 CREATE TABLE `auth_item` (
@@ -82,7 +82,7 @@ CREATE TABLE `auth_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item`
+-- Dumping data untuk tabel `auth_item`
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
@@ -196,7 +196,7 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item_child`
+-- Struktur dari tabel `auth_item_child`
 --
 
 CREATE TABLE `auth_item_child` (
@@ -205,7 +205,7 @@ CREATE TABLE `auth_item_child` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item_child`
+-- Dumping data untuk tabel `auth_item_child`
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
@@ -429,12 +429,13 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/user/settings/networks'),
 ('User', '/user/settings/networks'),
 ('admin', '/user/settings/profile'),
-('User', '/user/settings/profile');
+('User', '/user/settings/profile'),
+('penulis', 'penulisPermission');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_rule`
+-- Struktur dari tabel `auth_rule`
 --
 
 CREATE TABLE `auth_rule` (
@@ -447,7 +448,7 @@ CREATE TABLE `auth_rule` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -460,26 +461,24 @@ CREATE TABLE `berita` (
   `photo` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `created_by` int DEFAULT NULL,
   `updated_by` int DEFAULT NULL,
-  `summary` varchar(500) COLLATE utf8mb4_general_ci NOT NULL
+  `summary` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `link` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
-INSERT INTO `berita` (`id`, `judul`, `konten`, `penulis`, `tanggal_terbit`, `tanggal_diperbarui`, `photo`, `created_by`, `updated_by`, `summary`) VALUES
-(2, 'adwe', 'asdasda', 'asd', '2023-07-26 00:00:00', NULL, 'uploads/berita/IMG_20221217_153448_803.jpg', NULL, NULL, ''),
-(3, 'adad', 'aasd', 'asdasd', '2023-07-28 13:07:48', '2023-07-28 13:07:48', 'uploads/berita/erd.png', NULL, NULL, ''),
-(4, 'asdasdaasdasdasda', 'asdasd', 'asd', '2023-07-29 02:07:42', '2023-07-29 02:07:42', 'uploads/berita/kami bercerita zaki2.png', NULL, NULL, ''),
-(5, 'asdasd', 'asdasd', 'asdasd', '2023-08-01 03:08:39', '2023-08-01 03:08:39', 'uploads/berita/erd.png', NULL, NULL, ''),
-(6, 'coffe morning 1 agustus 2023', 'tes', 'tes', '2023-08-01 04:08:20', '2023-08-01 04:08:20', 'uploads/berita/erd.png', NULL, NULL, ''),
-(7, 'asdasd', 'sadasdas', 'asd', '2023-08-04 01:08:32', '2023-08-04 01:08:32', 'uploads/berita/kami bercerita zaki1.png', NULL, NULL, 'asd'),
-(8, 'ini judul', 'ini konten', 'saya penulis', '2023-08-05 07:08:29', '2023-08-05 07:08:29', 'uploads/berita/kami bercerita zaki2.png', NULL, NULL, 'ini ringkasan');
+INSERT INTO `berita` (`id`, `judul`, `konten`, `penulis`, `tanggal_terbit`, `tanggal_diperbarui`, `photo`, `created_by`, `updated_by`, `summary`, `link`) VALUES
+(8, 'ini judul', 'ini konten', 'saya penulis', '2023-08-05 07:08:29', '2023-08-05 07:08:29', 'uploads/berita/kami bercerita zaki2.png', NULL, NULL, 'ini ringkasan', ''),
+(9, 'coffe morning 1 agustus 2023', 'coffe modniafaodhadjasld', 'asdasd', '2023-08-12 09:08:13', '2023-08-12 09:08:13', 'uploads/berita/poster zaki.png', NULL, NULL, 'ini ringkasan', ''),
+(10, 'coffe morning 15 agustus 2023', 'ini kontennya', 'penulis', '2023-08-16 04:08:51', '2023-08-16 04:08:51', 'uploads/berita/erd.png', NULL, NULL, 'ini ringkasannya', ''),
+(11, 'sad', 'asdasdasdsa', 'asd', '2023-09-05 06:09:55', '2023-09-05 06:09:55', 'uploads/berita/WIN_20210820_11_23_18_Pro.jpg', NULL, NULL, 'ini ringkasan', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hubungi_kami`
+-- Struktur dari tabel `hubungi_kami`
 --
 
 CREATE TABLE `hubungi_kami` (
@@ -491,7 +490,7 @@ CREATE TABLE `hubungi_kami` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `layanan`
+-- Struktur dari tabel `layanan`
 --
 
 CREATE TABLE `layanan` (
@@ -507,7 +506,7 @@ CREATE TABLE `layanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `layanan`
+-- Dumping data untuk tabel `layanan`
 --
 
 INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
@@ -520,7 +519,7 @@ INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_ter
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -535,7 +534,7 @@ CREATE TABLE `menu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migration`
+-- Struktur dari tabel `migration`
 --
 
 CREATE TABLE `migration` (
@@ -544,7 +543,7 @@ CREATE TABLE `migration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `migration`
+-- Dumping data untuk tabel `migration`
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
@@ -557,13 +556,13 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimoni`
+-- Struktur dari tabel `testimoni`
 --
 
 CREATE TABLE `testimoni` (
   `id` int NOT NULL,
   `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `testimoni` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `testimoni` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
@@ -572,20 +571,27 @@ CREATE TABLE `testimoni` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `testimoni`
+-- Dumping data untuk tabel `testimoni`
 --
 
 INSERT INTO `testimoni` (`id`, `nama`, `testimoni`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
-(1, '21321', 'asdas', 'uploads/berita/poster zaki.png', '2023-07-28 15:07:08', '2023-07-28 15:07:08', NULL, NULL),
-(2, '1232wedrqw', 'asdasd', 'uploads/testimoni/kami bercerita zaki2.png', '2023-07-28 15:07:38', '2023-07-28 15:07:38', 100, 100),
-(3, 'asdsadsa', 'sadsadasd', 'uploads/testimoni/erd.png', '2023-08-01 03:08:27', '2023-08-01 03:08:27', NULL, NULL),
-(4, 'reereyt', 'asdas', 'uploads/testimoni/kami bercerita zaki2.png', '2023-08-02 04:08:44', '2023-08-02 04:08:44', NULL, NULL),
-(5, 'ini nama', 'ini testimoni', 'uploads/testimoni/poster zaki.png', '2023-08-05 08:08:07', '2023-08-05 08:08:07', NULL, NULL);
+(16, 'asdsa', 'asdsad', 'uploads/testimoni/squence diagram terbaru.png', '2023-08-15 04:08:00', '2023-08-15 04:08:00', NULL, NULL),
+(17, 'ini nama saya', 'ini testimoni saya', 'uploads/testimoni/usecase.png', '2023-08-15 10:08:18', '2023-08-15 10:08:18', NULL, NULL),
+(19, 'asdsa', 'testi', 'uploads/testimoni/hutan.jpeg', '2023-08-21 02:08:10', '2023-08-21 02:08:10', NULL, NULL),
+(20, 'Supri', 'Menurut saya ganteng', 'uploads/testimoni/hutan.jpeg', '2023-08-21 02:08:16', '2023-08-21 02:08:16', NULL, NULL),
+(21, 'Aku', 'Semua bagus', 'uploads/testimoni/WhatsApp Image 2023-01-16 at 11.43.19.jpeg', '2023-08-21 02:08:29', '2023-08-21 02:08:29', NULL, NULL),
+(22, 'Sayng', 'Semua amu', 'uploads/testimoni/edead884-0ba4-455c-bf39-9c67c6bd4ed1-removebg-preview.png', '2023-08-21 02:08:07', '2023-08-21 02:08:07', NULL, NULL),
+(31, 'ini nama', 'ini testimoni saya', 'uploads/testimoni/WIN_20210820_11_23_18_Pro.jpg', '2023-09-03 11:09:45', '2023-09-03 11:09:45', NULL, NULL),
+(32, 'ini nama', 'ini testimoni saya', 'uploads/testimoni/WIN_20210820_11_17_52_Pro.jpg', '2023-09-03 11:09:21', '2023-09-03 11:09:21', NULL, NULL),
+(33, 'ini nama', 'ini testimoni saya', 'uploads/testimoni/WIN_20210823_06_45_06_Pro.jpg', '2023-09-03 11:09:58', '2023-09-03 11:09:58', NULL, NULL),
+(38, 'ini nama', 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', 'uploads/testimoni/WIN_20210823_06_45_15_Pro.jpg', '2023-09-06 05:09:50', '2023-09-06 05:09:50', NULL, NULL),
+(39, 'ini nama', 'ini nama', 'uploads/testimoni/WIN_20210820_11_17_52_Pro.jpg', '2023-09-06 05:09:43', '2023-09-06 05:09:43', NULL, NULL),
+(43, 'ini nama', 'dasdsadasdas\r\ndasdsadasdas\r\ndasdsadasdas', 'uploads/testimoni/WIN_20210820_11_17_52_Pro.jpg', '2023-09-06 05:09:33', '2023-09-06 05:09:33', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -594,35 +600,36 @@ CREATE TABLE `user` (
   `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `photo`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin123@gmail.com', '1234567890');
+INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `photo`, `status`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin123@gmail.com', '1234567890', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_assignment`
+-- Indeks untuk tabel `auth_assignment`
 --
 ALTER TABLE `auth_assignment`
   ADD PRIMARY KEY (`item_name`,`user_id`),
   ADD KEY `idx-auth_assignment-user_id` (`user_id`);
 
 --
--- Indexes for table `auth_item`
+-- Indeks untuk tabel `auth_item`
 --
 ALTER TABLE `auth_item`
   ADD PRIMARY KEY (`name`),
@@ -630,102 +637,102 @@ ALTER TABLE `auth_item`
   ADD KEY `idx-auth_item-type` (`type`);
 
 --
--- Indexes for table `auth_item_child`
+-- Indeks untuk tabel `auth_item_child`
 --
 ALTER TABLE `auth_item_child`
   ADD PRIMARY KEY (`parent`,`child`),
   ADD KEY `child` (`child`);
 
 --
--- Indexes for table `auth_rule`
+-- Indeks untuk tabel `auth_rule`
 --
 ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hubungi_kami`
+-- Indeks untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `layanan`
+-- Indeks untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migration`
+-- Indeks untuk tabel `migration`
 --
 ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `testimoni`
+-- Indeks untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `hubungi_kami`
+-- AUTO_INCREMENT untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `layanan`
+-- AUTO_INCREMENT untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `testimoni`
+-- AUTO_INCREMENT untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

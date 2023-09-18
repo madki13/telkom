@@ -154,7 +154,7 @@ AppAsset::register($this);
                     </dl>
                     <dl class="contact-list">
                         <dt>Nomor Telp:</dt>
-                        <dd><a href="https://wa.me/082211371673">+62 822-1137-1673</a></dd>
+                        <dd><a href="https://wa.me/6282211371673">+62 822-1137-1673</a></dd>
                     </dl>
                 </div>
                 <div class="col-md-4 col-xl-3">

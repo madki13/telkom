@@ -18,6 +18,13 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
 <!-- ini code css nya -->
 
 <style>
+  @media (max-width: 767.98px) {
+    .card {
+      height: auto;
+      /* Ubah tinggi kartu agar responsif */
+    }
+  }
+
   @media (max-width:991.98px) {
     .padding {
       padding: 1.5rem
@@ -31,7 +38,7 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
   }
 
   .padding {
-    padding: 5rem
+    padding: 2rem
   }
 
   .card {
@@ -39,7 +46,7 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
     margin-bottom: 20px;
     position: relative;
     display: flex;
-    width: 350px;
+    width: 100%;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
@@ -70,6 +77,19 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
     -webkit-box-orient: vertical;
   }
 
+  .template-demo {
+    margin: 0;
+    max-height: 120px; /* Set a maximum height for the content */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis for overflowed content */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit the content to a maximum of 3 lines */
+    -webkit-box-orient: vertical;
+    /* max-width: 120px; */ /* Optionally, you can limit the width as well */
+}
+
+
+
 
   .card .card-body {
     padding: 1rem 1rem;
@@ -80,13 +100,15 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
   }
 
   p {
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: .5rem;
-    line-height: 1.5rem
+    line-height: 1.5rem;
+    max-width: 1
+    00px;
   }
 
   h4 {
-    line-height: .2 !important;
+    line-height: 1;
   }
 
   .profile {
@@ -107,11 +129,11 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
   }
 
   .cust-name {
-    font-size: 18px;
+    font-size: 1rem;
   }
 
   .cust-profession {
-    font-size: 10px;
+    font-size: 0.75;
   }
 
 
@@ -160,41 +182,6 @@ $isOwner = !Yii::$app->user->isGuest && $model->created_by == Yii::$app->user->i
     75% {
       transform: translateX(-300%);
     }
-  }
-
-  .tombol-selengkapnya {
-    text-decoration: none;
-    background-color: #4788C7;
-    border-radius: 4px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0;
-    max-width: none;
-    min-height: 44px;
-    min-width: 10px;
-    outline: none;
-    overflow: hidden;
-    padding: 9px 20px 8px;
-    position: relative;
-    text-align: center;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 100%;
-  }
-
-  .tombol-selengkapnya:hover,
-  .tombol-selengkapnya:focus {
-    opacity: .75;
-    text-decoration: none;
-    color: white;
   }
 </style>
 
