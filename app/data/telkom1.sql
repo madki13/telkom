@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 03:31 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost:3306
+-- Waktu pembuatan: 07 Sep 2023 pada 13.28
+-- Versi server: 8.0.30
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,17 +43,17 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_assignment`
+-- Struktur dari tabel `auth_assignment`
 --
 
 CREATE TABLE `auth_assignment` (
-  `item_name` varchar(64) NOT NULL,
-  `user_id` varchar(64) NOT NULL,
-  `created_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `item_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `user_id` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `created_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_assignment`
+-- Dumping data untuk tabel `auth_assignment`
 --
 
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
@@ -68,21 +68,21 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item`
+-- Struktur dari tabel `auth_item`
 --
 
 CREATE TABLE `auth_item` (
-  `name` varchar(64) NOT NULL,
-  `type` smallint(6) NOT NULL,
-  `description` text DEFAULT NULL,
-  `rule_name` varchar(64) DEFAULT NULL,
-  `data` blob DEFAULT NULL,
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `type` smallint NOT NULL,
+  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `rule_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `data` blob,
+  `created_at` int DEFAULT NULL,
+  `updated_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item`
+-- Dumping data untuk tabel `auth_item`
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
@@ -196,20 +196,21 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item_child`
+-- Struktur dari tabel `auth_item_child`
 --
 
 CREATE TABLE `auth_item_child` (
-  `parent` varchar(64) NOT NULL,
-  `child` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `parent` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `child` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item_child`
+-- Dumping data untuk tabel `auth_item_child`
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/*'),
+('adminPermission', '/*'),
 ('admin', '/admin/*'),
 ('admin', '/admin/assignment/*'),
 ('admin', '/admin/assignment/assign'),
@@ -260,17 +261,32 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/admin/user/delete'),
 ('admin', '/admin/user/index'),
 ('admin', '/admin/user/login'),
+('User', '/admin/user/login'),
 ('admin', '/admin/user/logout'),
+('User', '/admin/user/logout'),
 ('admin', '/admin/user/request-password-reset'),
 ('admin', '/admin/user/reset-password'),
 ('admin', '/admin/user/signup'),
 ('admin', '/admin/user/view'),
 ('admin', '/berita/*'),
+('penulis', '/berita/*'),
+('penulisPermission', '/berita/*'),
 ('admin', '/berita/create'),
+('penulis', '/berita/create'),
+('penulisPermission', '/berita/create'),
 ('admin', '/berita/delete'),
+('penulis', '/berita/delete'),
+('penulisPermission', '/berita/delete'),
 ('admin', '/berita/index'),
+('guestPermission', '/berita/index'),
+('penulis', '/berita/index'),
+('penulisPermission', '/berita/index'),
 ('admin', '/berita/update'),
+('penulis', '/berita/update'),
+('penulisPermission', '/berita/update'),
 ('admin', '/berita/view'),
+('penulis', '/berita/view'),
+('penulisPermission', '/berita/view'),
 ('admin', '/classroom/*'),
 ('admin', '/classroom/create'),
 ('admin', '/classroom/delete'),
@@ -322,14 +338,34 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/site/contact'),
 ('admin', '/site/error'),
 ('admin', '/site/index'),
+('User', '/site/index'),
 ('admin', '/site/login'),
+('User', '/site/login'),
 ('admin', '/site/logout'),
+('User', '/site/logout'),
+('User', '/submission/*'),
+('User', '/submission/create'),
+('User', '/submission/delete'),
+('User', '/submission/index'),
+('User', '/submission/update'),
+('User', '/submission/view'),
 ('admin', '/testimoni/*'),
+('guest', '/testimoni/*'),
+('guestPermission', '/testimoni/*'),
 ('admin', '/testimoni/create'),
+('guest', '/testimoni/create'),
+('guestPermission', '/testimoni/create'),
 ('admin', '/testimoni/delete'),
+('guest', '/testimoni/delete'),
+('guestPermission', '/testimoni/delete'),
 ('admin', '/testimoni/index'),
+('guest', '/testimoni/index'),
+('guestPermission', '/testimoni/index'),
 ('admin', '/testimoni/update'),
+('guest', '/testimoni/update'),
+('guestPermission', '/testimoni/update'),
 ('admin', '/testimoni/view'),
+('guestPermission', '/testimoni/view'),
 ('admin', '/trainer/*'),
 ('admin', '/trainer/create'),
 ('admin', '/trainer/delete'),
@@ -355,121 +391,82 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/user/admin/switch'),
 ('admin', '/user/admin/update'),
 ('admin', '/user/admin/update-profile'),
+('guest', '/user/login/*'),
 ('admin', '/user/profile/*'),
 ('admin', '/user/profile/index'),
 ('admin', '/user/profile/show'),
 ('admin', '/user/recovery/*'),
+('guest', '/user/recovery/*'),
 ('admin', '/user/recovery/request'),
+('guest', '/user/recovery/request'),
 ('admin', '/user/recovery/reset'),
+('guest', '/user/recovery/reset'),
 ('admin', '/user/registration/*'),
+('guest', '/user/registration/*'),
 ('admin', '/user/registration/confirm'),
+('guest', '/user/registration/confirm'),
 ('admin', '/user/registration/connect'),
+('guest', '/user/registration/connect'),
 ('admin', '/user/registration/register'),
+('guest', '/user/registration/register'),
 ('admin', '/user/registration/resend'),
+('guest', '/user/registration/resend'),
 ('admin', '/user/security/*'),
 ('admin', '/user/security/auth'),
 ('admin', '/user/security/login'),
+('User', '/user/security/login'),
 ('admin', '/user/security/logout'),
+('User', '/user/security/logout'),
 ('admin', '/user/settings/*'),
+('User', '/user/settings/*'),
 ('admin', '/user/settings/account'),
+('User', '/user/settings/account'),
 ('admin', '/user/settings/confirm'),
+('User', '/user/settings/confirm'),
 ('admin', '/user/settings/delete'),
 ('admin', '/user/settings/disconnect'),
-('admin', '/user/settings/networks'),
-('admin', '/user/settings/profile'),
-('adminPermission', '/*'),
-('guest', '/berita/index'),
-('guest', '/berita/view'),
-('guest', '/site/contact'),
-('guest', '/site/index'),
-('guest', '/testimoni/*'),
-('guest', '/testimoni/create'),
-('guest', '/testimoni/index'),
-('guest', '/testimoni/update'),
-('guest', '/user/login/*'),
-('guest', '/user/recovery/*'),
-('guest', '/user/recovery/request'),
-('guest', '/user/recovery/reset'),
-('guest', '/user/registration/*'),
-('guest', '/user/registration/confirm'),
-('guest', '/user/registration/connect'),
-('guest', '/user/registration/register'),
-('guest', '/user/registration/resend'),
-('guestPermission', '/berita/index'),
-('guestPermission', '/testimoni/*'),
-('guestPermission', '/testimoni/create'),
-('guestPermission', '/testimoni/delete'),
-('guestPermission', '/testimoni/index'),
-('guestPermission', '/testimoni/update'),
-('guestPermission', '/testimoni/view'),
-('penulis', '/berita/*'),
-('penulis', '/berita/create'),
-('penulis', '/berita/delete'),
-('penulis', '/berita/index'),
-('penulis', '/berita/update'),
-('penulis', '/berita/view'),
-('penulis', 'penulisPermission'),
-('penulisPermission', '/berita/*'),
-('penulisPermission', '/berita/create'),
-('penulisPermission', '/berita/delete'),
-('penulisPermission', '/berita/index'),
-('penulisPermission', '/berita/update'),
-('penulisPermission', '/berita/view'),
-('User', '/admin/user/login'),
-('User', '/admin/user/logout'),
-('User', '/site/index'),
-('User', '/site/login'),
-('User', '/site/logout'),
-('User', '/submission/*'),
-('User', '/submission/create'),
-('User', '/submission/delete'),
-('User', '/submission/index'),
-('User', '/submission/update'),
-('User', '/submission/view'),
-('User', '/user/security/login'),
-('User', '/user/security/logout'),
-('User', '/user/settings/*'),
-('User', '/user/settings/account'),
-('User', '/user/settings/confirm'),
 ('User', '/user/settings/disconnect'),
+('admin', '/user/settings/networks'),
 ('User', '/user/settings/networks'),
-('User', '/user/settings/profile');
+('admin', '/user/settings/profile'),
+('User', '/user/settings/profile'),
+('penulis', 'penulisPermission');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_rule`
+-- Struktur dari tabel `auth_rule`
 --
 
 CREATE TABLE `auth_rule` (
-  `name` varchar(64) NOT NULL,
-  `data` blob DEFAULT NULL,
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `data` blob,
+  `created_at` int DEFAULT NULL,
+  `updated_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(255) NOT NULL,
-  `konten` text NOT NULL,
-  `penulis` varchar(100) NOT NULL,
+  `id` int NOT NULL,
+  `judul` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `konten` text COLLATE utf8mb4_general_ci NOT NULL,
+  `penulis` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `photo` varchar(500) NOT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `summary` varchar(500) NOT NULL,
-  `link` varchar(200) NOT NULL
+  `photo` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `summary` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `link` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `konten`, `penulis`, `tanggal_terbit`, `tanggal_diperbarui`, `photo`, `created_by`, `updated_by`, `summary`, `link`) VALUES
@@ -481,35 +478,35 @@ INSERT INTO `berita` (`id`, `judul`, `konten`, `penulis`, `tanggal_terbit`, `tan
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hubungi_kami`
+-- Struktur dari tabel `hubungi_kami`
 --
 
 CREATE TABLE `hubungi_kami` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `no_telepon` varchar(255) NOT NULL
+  `id` int NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telepon` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `layanan`
+-- Struktur dari tabel `layanan`
 --
 
 CREATE TABLE `layanan` (
-  `id` int(11) NOT NULL,
-  `nama` text NOT NULL,
-  `harga` int(11) NOT NULL,
-  `kecepatan` int(11) NOT NULL,
-  `photo` varchar(500) NOT NULL,
+  `id` int NOT NULL,
+  `nama` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `harga` int NOT NULL,
+  `kecepatan` int NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `layanan`
+-- Dumping data untuk tabel `layanan`
 --
 
 INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
@@ -522,31 +519,31 @@ INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_ter
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
-  `id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  `parent` int(11) NOT NULL,
-  `route` varchar(255) NOT NULL,
-  `order` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `parent` int NOT NULL,
+  `route` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `order` int NOT NULL,
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migration`
+-- Struktur dari tabel `migration`
 --
 
 CREATE TABLE `migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL
+  `version` varchar(180) COLLATE utf8mb4_general_ci NOT NULL,
+  `apply_time` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `migration`
+-- Dumping data untuk tabel `migration`
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
@@ -559,22 +556,22 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimoni`
+-- Struktur dari tabel `testimoni`
 --
 
 CREATE TABLE `testimoni` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `testimoni` varchar(225) NOT NULL,
-  `photo` varchar(500) NOT NULL,
+  `id` int NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `testimoni` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `testimoni`
+-- Dumping data untuk tabel `testimoni`
 --
 
 INSERT INTO `testimoni` (`id`, `nama`, `testimoni`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
@@ -594,21 +591,21 @@ INSERT INTO `testimoni` (`id`, `nama`, `testimoni`, `photo`, `tanggal_terbit`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(300) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `photo` varchar(500) NOT NULL,
-  `status` int(11) NOT NULL
+  `id` int NOT NULL,
+  `nama` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `photo`, `status`) VALUES
@@ -619,20 +616,20 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `photo`, `sta
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_assignment`
+-- Indeks untuk tabel `auth_assignment`
 --
 ALTER TABLE `auth_assignment`
   ADD PRIMARY KEY (`item_name`,`user_id`),
   ADD KEY `idx-auth_assignment-user_id` (`user_id`);
 
 --
--- Indexes for table `auth_item`
+-- Indeks untuk tabel `auth_item`
 --
 ALTER TABLE `auth_item`
   ADD PRIMARY KEY (`name`),
@@ -640,105 +637,105 @@ ALTER TABLE `auth_item`
   ADD KEY `idx-auth_item-type` (`type`);
 
 --
--- Indexes for table `auth_item_child`
+-- Indeks untuk tabel `auth_item_child`
 --
 ALTER TABLE `auth_item_child`
   ADD PRIMARY KEY (`parent`,`child`),
   ADD KEY `child` (`child`);
 
 --
--- Indexes for table `auth_rule`
+-- Indeks untuk tabel `auth_rule`
 --
 ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hubungi_kami`
+-- Indeks untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `layanan`
+-- Indeks untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migration`
+-- Indeks untuk tabel `migration`
 --
 ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `testimoni`
+-- Indeks untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `hubungi_kami`
+-- AUTO_INCREMENT untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `layanan`
+-- AUTO_INCREMENT untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `testimoni`
+-- AUTO_INCREMENT untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
