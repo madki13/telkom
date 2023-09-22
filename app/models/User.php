@@ -4,7 +4,7 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-class User extends ActiveRecord
+class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
     public $id;
     public $username;
@@ -32,14 +32,21 @@ class User extends ActiveRecord
             'username' => 'penulis',
             'password' => 'penulis',
             'authKey' => 'test101key',
-            'accessToken' => '101-token',
+            'accessToken' => '102-token',
         ],
         '103' => [
             'id' => '103',
             'username' => 'guest',
             'password' => 'guest',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
+            'authKey' => 'test103key',
+            'accessToken' => '103-token',
+        ],
+        '104' => [
+            'id' => '104',
+            'username' => 'aku',
+            'password' => 'aku',
+            'authKey' => 'test104key',
+            'accessToken' => '104-token',
         ],
     ];
 

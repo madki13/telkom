@@ -19,29 +19,29 @@ use yii\captcha\Captcha;
             <div class="container">
                 <div class="column">
                     <div class="col-6">
-                       <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
                     </div>
 
                     <div class="col-6">
-                    <?= $form->field($model, 'testimoni')->textarea(['rows' => 6, 'maxlength' => 70])->label('testimoni')->hint('maksimal 70 karakter') ?>
+                        <?= $form->field($model, 'testimoni')->textarea(['rows' => 6, 'maxlength' => 70])->label('testimoni')->hint('maksimal 70 karakter') ?>
                     </div>
 
                     <div class="col-6">
-                       <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?> 
+                        <?= $form->field($model, 'photo')->fileInput(["multiple" => true, "accept" => "image/*"]) ?>
                     </div>
 
 
-                </div> 
+                </div>
             </div>
         </div>
 
         <div class="card-footer">
 
-        <div class="capctha">
-        <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-    ]) ?>
-        </div>
+            <div class="capctha">
+                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                ]) ?>
+            </div>
 
             <div class="form-group">
                 <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
@@ -52,6 +52,6 @@ use yii\captcha\Captcha;
     </div>
 
 
-    <?php ActiveForm::end(); ?> 
+    <?php ActiveForm::end(); ?>
 
 </div>

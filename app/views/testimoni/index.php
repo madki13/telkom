@@ -21,15 +21,21 @@ $this->title = 'Testimoni';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<p>
-    <?= Html::a('Buat testimoni', ['create'], ['class' => 'btn btn-success']) ?>
-</p>
+<?php if (Yii::$app->user->isGuest) : ?>
+    <p>
+        <?= Html::a('Buat testimoni', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+<?php endif; ?>
 
-<p>
+<!-- <p>
     <?= Html::a('edit testimoni', ['admin'], ['class' => 'btn btn-success']) ?>
-</p>
+</p> -->
 
-
+<?php if (!Yii::$app->user->isGuest) : ?>
+    <div class="navbar-right">
+        <?= Html::a('Admin', ['testimoni/admin'], ['class' => 'btn', 'style' => 'background-color: #B9272B; color: #fff;']) ?>
+    </div>
+<?php endif; ?>
 
 <div id="testimoni-index">
     <h1><?= Html::encode($this->title) ?></h1>

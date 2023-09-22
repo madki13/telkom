@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 03:31 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost:3306
+-- Waktu pembuatan: 22 Sep 2023 pada 15.59
+-- Versi server: 8.0.30
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,36 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
+(1, 'admin1', 'admin1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_assignment`
+-- Struktur dari tabel `auth_assignment`
 --
 
 CREATE TABLE `auth_assignment` (
-  `item_name` varchar(64) NOT NULL,
-  `user_id` varchar(64) NOT NULL,
-  `created_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `item_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `user_id` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `created_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_assignment`
+-- Dumping data untuk tabel `auth_assignment`
 --
 
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
@@ -68,125 +68,130 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item`
+-- Struktur dari tabel `auth_item`
 --
 
 CREATE TABLE `auth_item` (
-  `name` varchar(64) NOT NULL,
-  `type` smallint(6) NOT NULL,
-  `description` text DEFAULT NULL,
-  `rule_name` varchar(64) DEFAULT NULL,
-  `data` blob DEFAULT NULL,
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `type` smallint NOT NULL,
+  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `rule_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `data` blob,
+  `created_at` int DEFAULT NULL,
+  `updated_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item`
+-- Dumping data untuk tabel `auth_item`
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
-('/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/assignment/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/assignment/assign', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/assignment/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/assignment/revoke', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/assignment/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/default/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/default/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/menu/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/assign', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/get-users', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/remove', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/permission/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/assign', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/get-users', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/remove', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/role/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/assign', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/refresh', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/route/remove', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/rule/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/activate', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/change-password', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/login', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/logout', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/request-password-reset', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/reset-password', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/signup', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/admin/user/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/berita/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/db-explain', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/download-mail', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/toolbar', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/default/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/user/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/user/reset-identity', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/debug/user/set-identity', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/action', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/diff', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/preview', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/gii/default/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/layanan/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/about', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/captcha', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/contact', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/error', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/login', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/site/logout', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/*', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/create', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/delete', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/index', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/update', 2, NULL, NULL, NULL, 1690944458, 1690944458),
-('/testimoni/view', 2, NULL, NULL, NULL, 1690944458, 1690944458),
+('/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/assignment/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/assignment/assign', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/assignment/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/assignment/revoke', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/assignment/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/default/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/default/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/menu/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/assign', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/get-users', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/remove', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/permission/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/assign', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/get-users', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/remove', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/role/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/assign', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/refresh', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/route/remove', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/rule/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/activate', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/change-password', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/login', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/logout', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/request-password-reset', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/reset-password', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/signup', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/admin/user/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/admin', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/list', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/berita/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/db-explain', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/download-mail', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/toolbar', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/default/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/user/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/user/reset-identity', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/debug/user/set-identity', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/action', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/diff', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/preview', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/gii/default/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/layanan/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/about', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/captcha', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/contact', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/error', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/login', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/site/logout', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/*', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/admin', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/create', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/delete', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/index', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/update', 2, NULL, NULL, NULL, 1695397892, 1695397892),
+('/testimoni/view', 2, NULL, NULL, NULL, 1695397892, 1695397892),
 ('admin', 1, NULL, NULL, NULL, 1661097949, 1690944492),
 ('adminPermission', 2, NULL, NULL, NULL, 1690945297, 1690945297),
+('aku', 1, NULL, NULL, NULL, 1695109347, 1695396037),
+('akuPermissions', 2, NULL, NULL, NULL, 1695378296, 1695378296),
 ('guest', 1, NULL, NULL, NULL, 1663602370, 1690889304),
 ('guestPermission', 2, NULL, NULL, NULL, 1690945491, 1690945491),
 ('penulis', 1, NULL, NULL, NULL, 1690945184, 1690945184),
@@ -196,81 +201,166 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_item_child`
+-- Struktur dari tabel `auth_item_child`
 --
 
 CREATE TABLE `auth_item_child` (
-  `parent` varchar(64) NOT NULL,
-  `child` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `parent` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `child` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `auth_item_child`
+-- Dumping data untuk tabel `auth_item_child`
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/*'),
+('adminPermission', '/*'),
+('aku', '/*'),
+('akuPermissions', '/*'),
+('User', '/*'),
 ('admin', '/admin/*'),
+('aku', '/admin/*'),
 ('admin', '/admin/assignment/*'),
+('aku', '/admin/assignment/*'),
 ('admin', '/admin/assignment/assign'),
+('aku', '/admin/assignment/assign'),
 ('admin', '/admin/assignment/index'),
+('aku', '/admin/assignment/index'),
 ('admin', '/admin/assignment/revoke'),
+('aku', '/admin/assignment/revoke'),
 ('admin', '/admin/assignment/view'),
+('aku', '/admin/assignment/view'),
 ('admin', '/admin/default/*'),
+('aku', '/admin/default/*'),
 ('admin', '/admin/default/index'),
+('aku', '/admin/default/index'),
 ('admin', '/admin/menu/*'),
+('aku', '/admin/menu/*'),
 ('admin', '/admin/menu/create'),
+('aku', '/admin/menu/create'),
 ('admin', '/admin/menu/delete'),
+('aku', '/admin/menu/delete'),
 ('admin', '/admin/menu/index'),
+('aku', '/admin/menu/index'),
 ('admin', '/admin/menu/update'),
+('aku', '/admin/menu/update'),
 ('admin', '/admin/menu/view'),
+('aku', '/admin/menu/view'),
 ('admin', '/admin/permission/*'),
+('aku', '/admin/permission/*'),
 ('admin', '/admin/permission/assign'),
+('aku', '/admin/permission/assign'),
 ('admin', '/admin/permission/create'),
+('aku', '/admin/permission/create'),
 ('admin', '/admin/permission/delete'),
+('aku', '/admin/permission/delete'),
 ('admin', '/admin/permission/get-users'),
+('aku', '/admin/permission/get-users'),
 ('admin', '/admin/permission/index'),
+('aku', '/admin/permission/index'),
 ('admin', '/admin/permission/remove'),
+('aku', '/admin/permission/remove'),
 ('admin', '/admin/permission/update'),
+('aku', '/admin/permission/update'),
 ('admin', '/admin/permission/view'),
+('aku', '/admin/permission/view'),
 ('admin', '/admin/role/*'),
+('aku', '/admin/role/*'),
 ('admin', '/admin/role/assign'),
+('aku', '/admin/role/assign'),
 ('admin', '/admin/role/create'),
+('aku', '/admin/role/create'),
 ('admin', '/admin/role/delete'),
+('aku', '/admin/role/delete'),
 ('admin', '/admin/role/get-users'),
+('aku', '/admin/role/get-users'),
 ('admin', '/admin/role/index'),
+('aku', '/admin/role/index'),
 ('admin', '/admin/role/remove'),
+('aku', '/admin/role/remove'),
 ('admin', '/admin/role/update'),
+('aku', '/admin/role/update'),
 ('admin', '/admin/role/view'),
+('aku', '/admin/role/view'),
 ('admin', '/admin/route/*'),
+('aku', '/admin/route/*'),
 ('admin', '/admin/route/assign'),
+('aku', '/admin/route/assign'),
 ('admin', '/admin/route/create'),
+('aku', '/admin/route/create'),
 ('admin', '/admin/route/index'),
+('aku', '/admin/route/index'),
 ('admin', '/admin/route/refresh'),
+('aku', '/admin/route/refresh'),
 ('admin', '/admin/route/remove'),
+('aku', '/admin/route/remove'),
 ('admin', '/admin/rule/*'),
+('aku', '/admin/rule/*'),
 ('admin', '/admin/rule/create'),
+('aku', '/admin/rule/create'),
 ('admin', '/admin/rule/delete'),
+('aku', '/admin/rule/delete'),
 ('admin', '/admin/rule/index'),
+('aku', '/admin/rule/index'),
 ('admin', '/admin/rule/update'),
+('aku', '/admin/rule/update'),
 ('admin', '/admin/rule/view'),
+('aku', '/admin/rule/view'),
 ('admin', '/admin/user/*'),
+('aku', '/admin/user/*'),
 ('admin', '/admin/user/activate'),
+('aku', '/admin/user/activate'),
 ('admin', '/admin/user/change-password'),
+('aku', '/admin/user/change-password'),
 ('admin', '/admin/user/delete'),
+('aku', '/admin/user/delete'),
 ('admin', '/admin/user/index'),
+('aku', '/admin/user/index'),
 ('admin', '/admin/user/login'),
+('aku', '/admin/user/login'),
 ('admin', '/admin/user/logout'),
+('aku', '/admin/user/logout'),
 ('admin', '/admin/user/request-password-reset'),
+('aku', '/admin/user/request-password-reset'),
 ('admin', '/admin/user/reset-password'),
+('aku', '/admin/user/reset-password'),
 ('admin', '/admin/user/signup'),
+('aku', '/admin/user/signup'),
 ('admin', '/admin/user/view'),
+('aku', '/admin/user/view'),
 ('admin', '/berita/*'),
+('aku', '/berita/*'),
+('penulis', '/berita/*'),
+('penulisPermission', '/berita/*'),
+('User', '/berita/*'),
+('aku', '/berita/admin'),
 ('admin', '/berita/create'),
+('aku', '/berita/create'),
+('penulis', '/berita/create'),
+('penulisPermission', '/berita/create'),
 ('admin', '/berita/delete'),
+('aku', '/berita/delete'),
+('penulis', '/berita/delete'),
+('penulisPermission', '/berita/delete'),
 ('admin', '/berita/index'),
+('aku', '/berita/index'),
+('guest', '/berita/index'),
+('guestPermission', '/berita/index'),
+('penulis', '/berita/index'),
+('penulisPermission', '/berita/index'),
+('User', '/berita/index'),
+('aku', '/berita/list'),
 ('admin', '/berita/update'),
+('aku', '/berita/update'),
+('penulis', '/berita/update'),
+('penulisPermission', '/berita/update'),
 ('admin', '/berita/view'),
+('aku', '/berita/view'),
+('guest', '/berita/view'),
+('penulis', '/berita/view'),
+('penulisPermission', '/berita/view'),
+('User', '/berita/view'),
 ('admin', '/classroom/*'),
 ('admin', '/classroom/create'),
 ('admin', '/classroom/delete'),
@@ -278,33 +368,56 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/classroom/update'),
 ('admin', '/classroom/view'),
 ('admin', '/debug/*'),
+('aku', '/debug/*'),
 ('admin', '/debug/default/*'),
+('aku', '/debug/default/*'),
 ('admin', '/debug/default/db-explain'),
+('aku', '/debug/default/db-explain'),
 ('admin', '/debug/default/download-mail'),
+('aku', '/debug/default/download-mail'),
 ('admin', '/debug/default/index'),
+('aku', '/debug/default/index'),
 ('admin', '/debug/default/toolbar'),
+('aku', '/debug/default/toolbar'),
 ('admin', '/debug/default/view'),
+('aku', '/debug/default/view'),
 ('admin', '/debug/user/*'),
+('aku', '/debug/user/*'),
 ('admin', '/debug/user/reset-identity'),
+('aku', '/debug/user/reset-identity'),
 ('admin', '/debug/user/set-identity'),
+('aku', '/debug/user/set-identity'),
 ('admin', '/gii/*'),
+('aku', '/gii/*'),
 ('admin', '/gii/default/*'),
+('aku', '/gii/default/*'),
 ('admin', '/gii/default/action'),
+('aku', '/gii/default/action'),
 ('admin', '/gii/default/diff'),
+('aku', '/gii/default/diff'),
 ('admin', '/gii/default/index'),
+('aku', '/gii/default/index'),
 ('admin', '/gii/default/preview'),
+('aku', '/gii/default/preview'),
 ('admin', '/gii/default/view'),
+('aku', '/gii/default/view'),
 ('admin', '/gridview/*'),
 ('admin', '/gridview/export/*'),
 ('admin', '/gridview/export/download'),
 ('admin', '/gridview/grid-edited-row/*'),
 ('admin', '/gridview/grid-edited-row/back'),
 ('admin', '/layanan/*'),
+('aku', '/layanan/*'),
 ('admin', '/layanan/create'),
+('aku', '/layanan/create'),
 ('admin', '/layanan/delete'),
+('aku', '/layanan/delete'),
 ('admin', '/layanan/index'),
+('aku', '/layanan/index'),
 ('admin', '/layanan/update'),
+('aku', '/layanan/update'),
 ('admin', '/layanan/view'),
+('aku', '/layanan/view'),
 ('admin', '/question-template/*'),
 ('admin', '/question-template/create'),
 ('admin', '/question-template/delete'),
@@ -317,19 +430,57 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/report/export-training'),
 ('admin', '/report/training'),
 ('admin', '/site/*'),
+('aku', '/site/*'),
+('User', '/site/*'),
 ('admin', '/site/about'),
+('aku', '/site/about'),
 ('admin', '/site/captcha'),
+('aku', '/site/captcha'),
 ('admin', '/site/contact'),
+('aku', '/site/contact'),
+('guest', '/site/contact'),
+('User', '/site/contact'),
 ('admin', '/site/error'),
+('aku', '/site/error'),
 ('admin', '/site/index'),
+('aku', '/site/index'),
+('guest', '/site/index'),
+('User', '/site/index'),
 ('admin', '/site/login'),
+('aku', '/site/login'),
 ('admin', '/site/logout'),
+('aku', '/site/logout'),
+('User', '/submission/*'),
+('User', '/submission/create'),
+('User', '/submission/delete'),
+('User', '/submission/index'),
+('User', '/submission/update'),
+('User', '/submission/view'),
 ('admin', '/testimoni/*'),
+('aku', '/testimoni/*'),
+('guest', '/testimoni/*'),
+('guestPermission', '/testimoni/*'),
+('User', '/testimoni/*'),
+('aku', '/testimoni/admin'),
 ('admin', '/testimoni/create'),
+('aku', '/testimoni/create'),
+('guest', '/testimoni/create'),
+('guestPermission', '/testimoni/create'),
 ('admin', '/testimoni/delete'),
+('aku', '/testimoni/delete'),
+('guest', '/testimoni/delete'),
 ('admin', '/testimoni/index'),
+('aku', '/testimoni/index'),
+('guest', '/testimoni/index'),
+('guestPermission', '/testimoni/index'),
+('User', '/testimoni/index'),
 ('admin', '/testimoni/update'),
+('aku', '/testimoni/update'),
+('guest', '/testimoni/update'),
 ('admin', '/testimoni/view'),
+('aku', '/testimoni/view'),
+('guestPermission', '/testimoni/view'),
+('User', '/testimoni/view'),
 ('admin', '/trainer/*'),
 ('admin', '/trainer/create'),
 ('admin', '/trainer/delete'),
@@ -355,161 +506,125 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/user/admin/switch'),
 ('admin', '/user/admin/update'),
 ('admin', '/user/admin/update-profile'),
+('guest', '/user/login/*'),
 ('admin', '/user/profile/*'),
 ('admin', '/user/profile/index'),
 ('admin', '/user/profile/show'),
 ('admin', '/user/recovery/*'),
+('guest', '/user/recovery/*'),
 ('admin', '/user/recovery/request'),
+('guest', '/user/recovery/request'),
 ('admin', '/user/recovery/reset'),
+('guest', '/user/recovery/reset'),
 ('admin', '/user/registration/*'),
+('guest', '/user/registration/*'),
 ('admin', '/user/registration/confirm'),
+('guest', '/user/registration/confirm'),
 ('admin', '/user/registration/connect'),
+('guest', '/user/registration/connect'),
 ('admin', '/user/registration/register'),
+('guest', '/user/registration/register'),
 ('admin', '/user/registration/resend'),
+('guest', '/user/registration/resend'),
 ('admin', '/user/security/*'),
 ('admin', '/user/security/auth'),
 ('admin', '/user/security/login'),
+('User', '/user/security/login'),
 ('admin', '/user/security/logout'),
+('User', '/user/security/logout'),
 ('admin', '/user/settings/*'),
+('User', '/user/settings/*'),
 ('admin', '/user/settings/account'),
+('User', '/user/settings/account'),
 ('admin', '/user/settings/confirm'),
+('User', '/user/settings/confirm'),
 ('admin', '/user/settings/delete'),
 ('admin', '/user/settings/disconnect'),
-('admin', '/user/settings/networks'),
-('admin', '/user/settings/profile'),
-('adminPermission', '/*'),
-('guest', '/berita/index'),
-('guest', '/berita/view'),
-('guest', '/site/contact'),
-('guest', '/site/index'),
-('guest', '/testimoni/*'),
-('guest', '/testimoni/create'),
-('guest', '/testimoni/index'),
-('guest', '/testimoni/update'),
-('guest', '/user/login/*'),
-('guest', '/user/recovery/*'),
-('guest', '/user/recovery/request'),
-('guest', '/user/recovery/reset'),
-('guest', '/user/registration/*'),
-('guest', '/user/registration/confirm'),
-('guest', '/user/registration/connect'),
-('guest', '/user/registration/register'),
-('guest', '/user/registration/resend'),
-('guestPermission', '/berita/index'),
-('guestPermission', '/testimoni/*'),
-('guestPermission', '/testimoni/create'),
-('guestPermission', '/testimoni/delete'),
-('guestPermission', '/testimoni/index'),
-('guestPermission', '/testimoni/update'),
-('guestPermission', '/testimoni/view'),
-('penulis', '/berita/*'),
-('penulis', '/berita/create'),
-('penulis', '/berita/delete'),
-('penulis', '/berita/index'),
-('penulis', '/berita/update'),
-('penulis', '/berita/view'),
-('penulis', 'penulisPermission'),
-('penulisPermission', '/berita/*'),
-('penulisPermission', '/berita/create'),
-('penulisPermission', '/berita/delete'),
-('penulisPermission', '/berita/index'),
-('penulisPermission', '/berita/update'),
-('penulisPermission', '/berita/view'),
-('User', '/admin/user/login'),
-('User', '/admin/user/logout'),
-('User', '/site/index'),
-('User', '/site/login'),
-('User', '/site/logout'),
-('User', '/submission/*'),
-('User', '/submission/create'),
-('User', '/submission/delete'),
-('User', '/submission/index'),
-('User', '/submission/update'),
-('User', '/submission/view'),
-('User', '/user/security/login'),
-('User', '/user/security/logout'),
-('User', '/user/settings/*'),
-('User', '/user/settings/account'),
-('User', '/user/settings/confirm'),
 ('User', '/user/settings/disconnect'),
+('admin', '/user/settings/networks'),
 ('User', '/user/settings/networks'),
-('User', '/user/settings/profile');
+('admin', '/user/settings/profile'),
+('User', '/user/settings/profile'),
+('aku', 'admin'),
+('aku', 'adminPermission'),
+('aku', 'akuPermissions'),
+('penulis', 'penulisPermission');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_rule`
+-- Struktur dari tabel `auth_rule`
 --
 
 CREATE TABLE `auth_rule` (
-  `name` varchar(64) NOT NULL,
-  `data` blob DEFAULT NULL,
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `data` blob,
+  `created_at` int DEFAULT NULL,
+  `updated_at` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(255) NOT NULL,
-  `konten` text NOT NULL,
-  `penulis` varchar(100) NOT NULL,
+  `id` int NOT NULL,
+  `judul` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `konten` text COLLATE utf8mb4_general_ci NOT NULL,
+  `penulis` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `photo` varchar(500) NOT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `summary` varchar(500) NOT NULL,
-  `link` varchar(200) NOT NULL
+  `photo` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `summary` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `link` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `konten`, `penulis`, `tanggal_terbit`, `tanggal_diperbarui`, `photo`, `created_by`, `updated_by`, `summary`, `link`) VALUES
-(8, 'ini judul', 'ini konten', 'saya penulis', '2023-08-05 07:08:29', '2023-08-05 07:08:29', 'uploads/berita/kami bercerita zaki2.png', NULL, NULL, 'ini ringkasan', ''),
-(9, 'coffe morning 1 agustus 2023', 'coffe modniafaodhadjasld', 'asdasd', '2023-08-12 09:08:13', '2023-08-12 09:08:13', 'uploads/berita/poster zaki.png', NULL, NULL, 'ini ringkasan', ''),
-(10, 'coffe morning 15 agustus 2023', 'ini kontennya', 'penulis', '2023-08-16 04:08:51', '2023-08-16 04:08:51', 'uploads/berita/erd.png', NULL, NULL, 'ini ringkasannya', ''),
-(11, 'sad', 'asdasdasdsa', 'asd', '2023-09-05 06:09:55', '2023-09-05 06:09:55', 'uploads/berita/WIN_20210820_11_23_18_Pro.jpg', NULL, NULL, 'ini ringkasan', '');
+(12, 'sad', ' \r\nJAKARTA– Organisasi Siswa Intra Sekolah (OSIS) SMK Negeri 2 Jakarta menyelenggarakan pemilihan Umum Ketua OSIS  periode 2017/2018, pemilihan ini di adakan sesuai dengan tata cara menggunakan basis Teknologi, Dikembangkan oleh INATEC pemilihan ini dinamakan si KEPO.\r\n \r\n \r\n \r\n \r\n Kegiatan yang dilaksanakan Senin (13/08) ini menganut sistem dari siswa, oleh siswa, untuk siswa. Prinsip demokrasi ini diterapkan dalam pemilihan ketua OSIS yang diharapkan memberikan pelajaran untuk menggunakan hak yang dimiliki secara bertanggung jawab.\r\nKepala SMK Negeri 2 Jakarta dalam sambutan sebelum pemilihan umum mengatakan, bahwa pelaksanaan pemilihan Ketua OSIS periode 2017/2018 ini adalah wujud penanaman demokrasi sejak dini sehingga nantinya terbiasa dengan alam demokrasi yang ada di negara ini.\r\n\r\n“Jadikan Pemilihan ketua OSIS ini sarana untuk melatih berdemokrasi,” ujar pak ismunanto\r\n\r\nPemilihan Ketua OSIS ini cukup menarik, karena sebelum pencoblosan,  calon yang bertarung melakukan orasi serta menyampaikan visi dan misi yang akan dilaksanakan 1 tahun kedepan dalam memimpin OSIS.\r\n\r\n“Hal ini perlu dilakukan untuk mengajarkan siswa agar berani mengungkapkan pendapatnya kepada khalayak ramai,” tambahnya.\r\n\r\n \r\n\r\n\r\n\r\n \r\n\r\nSementara itu Wakil Kepala Kesiswaan, Drs. Kadirah menyampaikan, Pemilihan Ketua Osis ini diikuti oleh seluruh siswa kelas 10 sampai kelas 12 dengan total 561 yang tercantum dalam daftar pemilih. Tiap siswa mempunyai hak untuk melakukan pencoblosan.\r\n\r\n“Bagi kandidat yang bersaing diharapkan dapat  menerima apapun hasil yang diperoleh dalam proses pemilihan yang dilaksanakan. Selain itu Ketua OSIS yang nantinya terpilih  diharapkan mampu menjadi sosok yang bisa memimpin dan memberikan contoh yang baik bagi temannya,\"\r\n\r\nBerikut Video Kegiatan Pemilihan OSIS berbasis IT ', 'saya penulis', '2023-09-11 04:09:28', '2023-09-11 04:09:28', 'uploads/berita/WIN_20210820_11_17_52_Pro.jpg', NULL, NULL, 'ini ringkasan', '110923'),
+(13, 'sad', 'Untuk alumni smkn2 Jakarta tahun 2017 .\r\n\r\nSudah bisa mengambil ijazah,\r\n\r\nPada Hari Senin, 4 September 2017\r\n\r\nSemua harus menggunakan seragam dan menggunakan sepatu .\r\n\r\nDatang ke TU SMKN 2 jam 07.00 - 14.00 WIB\r\n\r\nDengan menghubungi Bapak Abeng Hermawan\r\n\r\n \r\n\r\nNote :\r\n\r\nHanya Bagi yang sudah cap 3 jari ', 'saya penulis', '2023-09-11 04:09:50', '2023-09-11 04:09:50', 'uploads/berita/WIN_20210820_11_23_18_Pro.jpg', NULL, NULL, 'ini ringkasan', 'ijazah'),
+(14, 'coffe morning 1 agustus 2023', 'Bertempat di rumah dinas di balai agung Pasukan Pengibar Bendera Pusaka (Paskibraka), DKI Jakarta tahun 2017 resmi dikukuhkan selasa (15/8).\r\n\r\n \r\n\r\nPengukuhan PASKIBRAKA \r\nTINGKAT  JAKARTA PUSAT\r\nKantor Walikota Tahun 2017\r\n\r\n\r\n \r\n\r\nBertempat di rumah dinas walikota jakarta pusat Pasukan Pengibar Bendera Pusaka (Paskibraka), Walikota Jakarta Pusat tahun 2017 resmi dikukuhkan selasa (15/8).\r\n\r\n \r\n\r\nPaskibraka ini akan mengemban tugas menaikkan bendera merah putih pada upacara Hari Ulang Tahun (HUT) Republik Indonesia ke-72 tanggal 17 Agustus mendatang serta menurunkan bendera pada upacara penurunan bendera sore harinya.\r\n\r\n ', 'sadsad', '2023-09-11 04:09:46', '2023-09-11 04:09:46', 'uploads/berita/WIN_20210823_06_45_31_Pro.jpg', NULL, NULL, 'sadsadsad', 'iinasdisa'),
+(16, 'coffe morning 12 agustus 2023', '	\r\nJAKARTA– Organisasi Siswa Intra Sekolah (OSIS) SMK Negeri 2 Jakarta menyelenggarakan pemilihan Umum Ketua OSIS periode 2017/2018, pemilihan ini di adakan sesuai dengan tata cara menggunakan basis Teknologi, Dikembangkan oleh INATEC pemilihan ini dinamakan si KEPO.\r\n\r\n\r\n\r\n\r\nKegiatan yang dilaksanakan Senin (13/08) ini menganut sistem dari siswa, oleh siswa, untuk siswa. Prinsip demokrasi ini diterapkan dalam pemilihan ketua OSIS yang diharapkan memberikan pelajaran untuk menggunakan hak yang dimiliki secara bertanggung jawab.\r\nKepala SMK Negeri 2 Jakarta dalam sambutan sebelum pemilihan umum mengatakan, bahwa pelaksanaan pemilihan Ketua OSIS periode 2017/2018 ini adalah wujud penanaman demokrasi sejak dini sehingga nantinya terbiasa dengan alam demokrasi yang ada di negara ini.\r\n\r\n“Jadikan Pemilihan ketua OSIS ini sarana untuk melatih berdemokrasi,” ujar pak ismunanto\r\n\r\nPemilihan Ketua OSIS ini cukup menarik, karena sebelum pencoblosan, calon yang bertarung melakukan orasi serta menyampaikan visi dan misi yang akan dilaksanakan 1 tahun kedepan dalam memimpin OSIS.\r\n\r\n“Hal ini perlu dilakukan untuk mengajarkan siswa agar berani mengungkapkan pendapatnya kepada khalayak ramai,” tambahnya.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nSementara itu Wakil Kepala Kesiswaan, Drs. Kadirah menyampaikan, Pemilihan Ketua Osis ini diikuti oleh seluruh siswa kelas 10 sampai kelas 12 dengan total 561 yang tercantum dalam daftar pemilih. Tiap siswa mempunyai hak untuk melakukan pencoblosan.\r\n\r\n“Bagi kandidat yang bersaing diharapkan dapat menerima apapun hasil yang diperoleh dalam proses pemilihan yang dilaksanakan. Selain itu Ketua OSIS yang nantinya terpilih diharapkan mampu menjadi sosok yang bisa memimpin dan memberikan contoh yang baik bagi temannya,\"\r\n\r\nBerikut Video Kegiatan Pemilihan OSIS berbasis IT', 'saya penulis', '2023-09-12 03:09:18', '2023-09-12 03:09:18', 'uploads/berita/edead884-0ba4-455c-bf39-9c67c6bd4ed1-removebg-preview.png', NULL, NULL, 'ini ringkasan', 'coffemorning12agustus2023');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hubungi_kami`
+-- Struktur dari tabel `hubungi_kami`
 --
 
 CREATE TABLE `hubungi_kami` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `no_telepon` varchar(255) NOT NULL
+  `id` int NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `no_telepon` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `layanan`
+-- Struktur dari tabel `layanan`
 --
 
 CREATE TABLE `layanan` (
-  `id` int(11) NOT NULL,
-  `nama` text NOT NULL,
-  `harga` int(11) NOT NULL,
-  `kecepatan` int(11) NOT NULL,
-  `photo` varchar(500) NOT NULL,
+  `id` int NOT NULL,
+  `nama` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `harga` int NOT NULL,
+  `kecepatan` int NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `layanan`
+-- Dumping data untuk tabel `layanan`
 --
 
 INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
@@ -522,31 +637,31 @@ INSERT INTO `layanan` (`id`, `nama`, `harga`, `kecepatan`, `photo`, `tanggal_ter
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
-  `id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  `parent` int(11) NOT NULL,
-  `route` varchar(255) NOT NULL,
-  `order` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `parent` int NOT NULL,
+  `route` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `order` int NOT NULL,
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migration`
+-- Struktur dari tabel `migration`
 --
 
 CREATE TABLE `migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL
+  `version` varchar(180) COLLATE utf8mb4_general_ci NOT NULL,
+  `apply_time` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `migration`
+-- Dumping data untuk tabel `migration`
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
@@ -559,22 +674,22 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimoni`
+-- Struktur dari tabel `testimoni`
 --
 
 CREATE TABLE `testimoni` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `testimoni` varchar(225) NOT NULL,
-  `photo` varchar(500) NOT NULL,
+  `id` int NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `testimoni` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_terbit` datetime DEFAULT NULL,
   `tanggal_diperbarui` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `testimoni`
+-- Dumping data untuk tabel `testimoni`
 --
 
 INSERT INTO `testimoni` (`id`, `nama`, `testimoni`, `photo`, `tanggal_terbit`, `tanggal_diperbarui`, `created_by`, `updated_by`) VALUES
@@ -594,45 +709,47 @@ INSERT INTO `testimoni` (`id`, `nama`, `testimoni`, `photo`, `tanggal_terbit`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(300) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `photo` varchar(500) NOT NULL,
-  `status` int(11) NOT NULL
+  `id` int NOT NULL,
+  `nama` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `photo` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `photo`, `status`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin123@gmail.com', '1234567890', 0);
+(1, 'admin', 'admin', 'admin', 'admin123@gmail.com', '1234567890', 0),
+(2, 'aku', 'aku', 'aku', 'aku@gmail.com', 'oke', 0),
+(4, 'telkomis', 'telkomis', 'telkomis', 'telkomis@gmail.com', '', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_assignment`
+-- Indeks untuk tabel `auth_assignment`
 --
 ALTER TABLE `auth_assignment`
   ADD PRIMARY KEY (`item_name`,`user_id`),
   ADD KEY `idx-auth_assignment-user_id` (`user_id`);
 
 --
--- Indexes for table `auth_item`
+-- Indeks untuk tabel `auth_item`
 --
 ALTER TABLE `auth_item`
   ADD PRIMARY KEY (`name`),
@@ -640,105 +757,105 @@ ALTER TABLE `auth_item`
   ADD KEY `idx-auth_item-type` (`type`);
 
 --
--- Indexes for table `auth_item_child`
+-- Indeks untuk tabel `auth_item_child`
 --
 ALTER TABLE `auth_item_child`
   ADD PRIMARY KEY (`parent`,`child`),
   ADD KEY `child` (`child`);
 
 --
--- Indexes for table `auth_rule`
+-- Indeks untuk tabel `auth_rule`
 --
 ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hubungi_kami`
+-- Indeks untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `layanan`
+-- Indeks untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migration`
+-- Indeks untuk tabel `migration`
 --
 ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `testimoni`
+-- Indeks untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `hubungi_kami`
+-- AUTO_INCREMENT untuk tabel `hubungi_kami`
 --
 ALTER TABLE `hubungi_kami`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `layanan`
+-- AUTO_INCREMENT untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `testimoni`
+-- AUTO_INCREMENT untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <p>
-    <?= Html::a('Create Layanan', ['create'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('buat berita', ['create'], ['class' => 'btn btn-success']) ?>
 </p>
 
 

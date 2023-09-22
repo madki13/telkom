@@ -16,6 +16,14 @@ $this->title = 'Berita';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+
+<?php if (!Yii::$app->user->isGuest) : ?>
+    <div class="navbar-right">
+        <?= Html::a('Admin Berita', ['berita/admin'], ['class' => 'btn', 'style' => 'background-color: #B9272B; color: #fff;']) ?>
+    </div>
+<?php endif; ?>
+
+
 <div id="testimoni-index">
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -23,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="row">
                 <?php
-                $dataProvider->pagination->pageSize = 1     ; // Batasi jumlah testimoni per halaman
+                $dataProvider->pagination->pageSize = 6     ; // Batasi jumlah testimoni per halaman
                 $totalCount = $dataProvider->getTotalCount();
                 $maxButtonCount = min($totalCount, 100); // Batasi jumlah tombol pagination
 
