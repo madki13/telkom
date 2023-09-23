@@ -10,24 +10,7 @@ $photo = $model->photo;
 
 ?>
 
-<!-- <div class="col-4" data-key="<?= $key; ?>">
-    <div class="berita-index animate-box fadeInUp animated-fast">
-        <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>">
-            <img class="img-responsive" src="<?= $photo ?>" />
-        </a>
-        <div class="berita-text">
-            <h3><a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" judul="<?= $model->judul ?>"><?= $model->judul ?></a></h3>
-            <p class="summary"><?= $model->summary ?></p>
-            <span class="posted_on"><?= $model->tanggal_terbit ?></span>
-            <a href="<?= Url::to(['berita/view', 'id' => $model->id]) ?>" class="btn btn-primary" judul="<?= $model->judul ?>">Selengkapnya</a>
-        </div>
-    </div>
-</div> -->
-
 <head>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet"> -->
     <style>
         .card {
             margin-top: 20px;
@@ -79,7 +62,7 @@ $photo = $model->photo;
 
 
         .small-btn {
-            font-size: 14px;
+            font-size: px;
             /* Atur ukuran font sesuai kebutuhan Anda */
             padding: 9px 20px 8px;
             /* Atur padding tombol sesuai kebutuhan Anda */

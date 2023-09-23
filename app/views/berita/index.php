@@ -48,38 +48,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     'itemOptions' => [
                         'class' => 'col-4',
                     ],
-                    'options' => [
-                        'class' => 'card-body',
-                    ],
-                    'options' => [
-                        'class' => 'card-title',
-                    ],
+
                     'options' => [
                         'class' => 'row',
                     ],
-                    'summary' => '',
                 ]); ?>
             </div>
         </div>
     </div>
 </div>
 
-<?php /* <div class="Berita-index">
-    <?= GridView::widget($dataProvider, $searchModel, $this->title,
-    [
-        ['class' => 'kartik\grid\SerialColumn'],
-            'id',
-            'judul',
-            'konten:ntext',
-            'penulis',
-            'tanggal_terbit',
-            //  'photo',
-        [
-            'class' => ActionColumn::className(),
-            'width' => '150px',
-            'urlCreator' => function ($action, $model, $key, $index, $column) {
-                return Url::toRoute([$action, 'id' => $model->id]);
-            }
-        ],
-    ]) ?>
-</div> */

@@ -38,7 +38,7 @@ class Berita extends \app\components\ActiveRecord
     public function rules()
     {
         return [
-            [['judul', 'konten', 'penulis', 'tanggal_terbit', 'photo', 'summary','link'], 'required'],
+            [['judul', 'konten', 'penulis', 'tanggal_terbit', 'summary','link'], 'required'],
             [['konten'], 'string'],
             [['created_by', 'updated_by', ], 'integer'],
             [['tanggal_terbit', 'tanggal_diperbarui',], 'safe'],
@@ -47,7 +47,7 @@ class Berita extends \app\components\ActiveRecord
             [['photo'], 'string', 'max' => 500],
             [['summary'], 'string', 'max' => 500],
             [['link'], 'string', 'max' => 200],
-
+            [['photo'], 'validationRequiredPhoto'],
         ];
     }
 
@@ -123,4 +123,7 @@ class Berita extends \app\components\ActiveRecord
         return $model;
     }
 
+    function validationRequiredPhoto($attribute){
+
+    }
 }
