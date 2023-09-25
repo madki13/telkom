@@ -8,221 +8,399 @@ $this->title = 'My Yii Application';
 <html lang="en">
 
 <head>
-  <title>W3.CSS Template</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,600&family=Poppins:ital,wght@0,200;0,400;1,200;1,300;1,500;1,800&family=REM:wght@300;600&family=Source+Code+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+  <title>Perusahaan XYZ</title>
   <style>
-    .w3-container.w3-center {
-      padding: 180px 16px;
+    * {
+      padding: 0;
+      margin: 0;
     }
 
-    /* Increase padding in first content section */
-    .w3-pale-red.w3-padding-64 {
-      padding: 120px 0;
-    }
-
-    /* Increase padding in second content section */
-    .w3-light-grey.w3-padding-64 {
-      padding: 2000px 0;
-    }
-
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Lato", sans-serif
-    }
-
-    .w3-bar,
-    h1,
-    button {
-      font-family: "Montserrat", sans-serif
-    }
-
-    .fa-wifi,
-    .fa-signal {
-      font-size: 200px
-    }
-
-    body {
-      background-image: url('https://harianterkini.com/wp-content/uploads/2023/01/Artikel-HT-16-IKN.jpg');
+    .wrapper {
+      background: url(https://digitalbisa.id/56tahun/img/sejarah-bawah-gedung.png );
       background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      height: 110vh;
+      margin: -70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: lightgray;
+     
     }
 
-    body::before {
-      content: "";
+    .center {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 30%;
+      left: 14%;
+      padding: 20px;
+
+
+    }
+
+    .center h1 {
+      font-size: 55px;
+      width: 900px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-left: 20px;
+      font-weight: 800;
+
+
+    }
+
+    .center h2 {
+      font-size: 50px;
+      width: 885px;
+      margin-top: 10px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-left: 22px;
+      font-weight: 800;
+    }
+
+    .center h5 {
+      font-size: 25px;
+      font-weight: 800;
+      margin-left: 280px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .bagian {
+      padding-top: 100Px;
+      font-size: 30px;
+      margin-left: 470px;
+
+    }
+
+    .isi {
+      display: flex;
+      margin-top: 5%;
+      justify-content: space-between;
+      padding: 60px;
+
+    }
+
+    .content {
+      flex-basis: 31%;
+      background-color: #FF6A61;
+      border-radius: 10px;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    .struktur{
+        align-items: center;
+        margin-top: 100px;
+    }
+    .struktur img{
+      max-width: 200px;
+      margin-right: 20px;
+      margin-top: -60px;
+      margin-left: 50px;
+    }
+    .struktur h6{
+      margin: 0;
+      margin-top: -150px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 40px;
+      display: flex;
+      margin-left: 270px;
+      
+
+    }
+    .struktur p1{
+      margin-left: -140px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      display: flex;
+      margin-left: 270PX;
+      margin-top: 35px;
+      
+
+    }
+
+    .pound{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+      padding: 30px;
+      margin-top: -100px;
+
+    }
+    .pound img{
       width: 100%;
-      height: 250%;
-      background-color: rgba(0, 0, 0, 0.5);
-      filter: brightness(80%);
-      z-index: -1;
+      border-radius: 10px;
+    }
+
+    
+
+    .utopia h7{
+      font-size: 40px;
+      margin-top: 5px;
+      margin-left: 380px;
+      font-family: 'Poppins', sans-serif;
+      padding: 100px;
+    }
+    .utopia p2{
+      font-size: 20px;
+      margin-top: 100px;
+      margin-left: 480px;
+      font-family: 'Poppins', sans-serif;
+
+
+    }
+    .profile{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+      padding: 30px;
+      margin-top: -100px;
 
     }
 
-    body {
-      color: white;
+    .profile img{
+      width: 40%;
+      border-radius: 50%;
+
     }
 
-    .w3-jumbo {
-      font-size: 10px;
+    .bihan{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+      padding: 30px;
+      margin-top: -100px;
     }
+
+    .bihan img{
+      width: 20%;
+      border-radius: 50%;
+
+    }
+
+    .center img{
+      width: 20%;
+      margin-top: -15%;
+      margin-left: -15%
+    }
+    * {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+.struktur-perusahaan {
+	height: 100vh;
+	display: grid;
+	align-items: center;
+	font-family: 'Poppins', sans-serif;
+}
+.tree {
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+.tree ul {
+	padding-top: 20px;
+	position: relative;
+	transition: .5s;
+}
+.tree li {
+	display: inline-table;
+	text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 10px;
+	transition: .5s;
+}
+.tree li::before, .tree li::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 50%;
+	border-top: 1px solid #ccc;
+	width: 51%;
+	height: 10px;
+}
+.tree li::after {
+	right: auto;
+	left: 50%;
+	border-left: 1px solid #ccc;
+}
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+.tree li:only-child {
+	padding-top: 0;
+}
+.tree li:first-child::before, .tree li:last-child::after {
+	border: 0 none;
+}
+.tree li:last-child::before {
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+.tree ul ul::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0;
+	height: 20px;
+}
+.tree li a {
+	border: 1px solid #ccc;
+	padding: 10px;
+	display: inline-grid;
+	border-radius: 5px;
+	text-decoration-line: none;
+	border-radius: 5px;
+	transition: .5s;
+}
+.tree li a img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 10px !important;
+	border-radius: 100px;
+	margin: auto;
+}
+.tree li a span {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #666;
+	padding: 8px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+.tree li a:hover, .tree li a:hover i, .tree li a:hover span, .tree li a:hover+ul li a {
+	background: #c8e4f8;
+	color: #000;
+	border: 1px solid #94a0b4;
+}
+.tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
+	border-color: #94a0b4;
+}
   </style>
 </head>
 
 <body>
-
-
-  <div class="w3-top">
-    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+  <div class="wrapper"> </div>
+  <div class="center">
+    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/1200px-Telkom_Indonesia_2013.svg.png" alt="">
+    <h1> TELKOM STO GAMBIR</h1>
+    <h2>THE WORLD IN YOUR HAND</h2>
+    <h5> WELCOME TO OUR WEBSITE</h5>
+  </div>
+  <div class="bagian">
+    <h3>
+      SEPUTAR TELKOM INDONESIA
+    </h3>
+  </div>
+  <div class="isi">
+    <div class="content">
+      <h4>TELKOM</h4>
+      <p> Telkom Indonesia adalah penyedia layanan telekomunikasi yang menyediakan berbagai layanan seperti telepon tetap, telepon seluler, internet, dan layanan data.</p>
     </div>
-
-
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    <div class="content">
+      <h4>SEJARAH</h4>
+      <p>Telkom Indonesia didirikan pada tahun 1856 dan sejak itu telah berkembang menjadi perusahaan terkemuka di industri telekomunikasi Indonesia. Perusahaan ini memiliki misi untuk menyediakan layanan telekomunikasi berkualitas tinggi kepada pelanggan di seluruh Indonesia.</p>
+    </div>
+    <div class="content">
+      <h4>VISI</h4>
+      <p> Dengan visi untuk menjadi Digital Telecommunication Company of the Region, Telkom Indonesia terus berinovasi dan berinvestasi dalam teknologi terbaru untuk memenuhi kebutuhan pelanggan di era digital.</p>
     </div>
   </div>
 
-
-  <header class="w3-container w3-center" style="padding:128px 16px">
-    <img src="https://www.telkom.co.id/data/image_upload/page/1594113058432_compress_PNG%20Logo%20Reverse%20Primer%20Telkom.png" class="w3-round" alt="TELKOM" style="position: absolute; top: 60px; left: 20px; width: 100px; height: auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Logo_BUMN_Untuk_Indonesia_2020.svg/2560px-Logo_BUMN_Untuk_Indonesia_2020.svg.png" class="w3-round" alt="TELKOM" style="position: absolute; top: 60px; right: 20px; width: 120px; height: auto;">
-    <h1 class="w3-margin w3-jumbo">TELKOM INDONESIA</h1>
-    <h1 class="w3-margin w3-jumbo"> THE WORLD IN YOUR HAND</h1>
-    <p class="w3-xlarge">WELOME TO OUR WEBSITE </p>
-  </header>
-
-
-  <div class="w3-row-padding w3-pale-red w3-padding-64 w3-container">
-    <div class="w3-content">
-      <div class="w3-twothird">
-        <h1>Tentang Telkomgroup</h1>
-        <h5 class="w3-padding-32">TENTANG TELKOMGROUP</h5>
-
-        <p class="w3-text-black">LPT Telkom Indonesia (Persero) Tbk (Telkom) adalah Badan Usaha Milik Negara (BUMN) yang bergerak di bidang jasa layanan teknologi informasi dan komunikasi (TIK) dan jaringan telekomunikasi di Indonesia. Pemegang saham mayoritas Telkom adalah Pemerintah Republik Indonesia sebesar 52.09%, sedangkan 47.91% sisanya dikuasai oleh publik. Saham Telkom diperdagangkan di Bursa Efek Indonesia (BEI) dengan kode “TLKM” dan New York Stock Exchange (NYSE) dengan kode “TLK”.</p>
-      </div>
-
-      <div class="w3-third w3-center">
-        <i class="fa fa-wifi w3-padding-64 w3-text-red w3-size-48 "></i>
-
-      </div>
+  <div class="struktur">
+    <img src="https://www.telkom.co.id/data/image_upload/page/1594112895830_compress_PNG%20Icon%20Telkom.png" alt="">
+    <h6> Apa itu IS dan IPN?</h6>
+    <p1> IS adalah bagian dari TELKOM STO GAMBIR yaitu menangani instalsai infrasturuktur jaringan jaringan network telekomunikasi dan seatmanajemen laptop dekstop printer dan infokus digedung TELKOM. IPN mentenes metro untuk witel jakarta pusat </p1>
+    
+  </div>
+  
+  <div class="isi">
+    <div class="pound">
+      <img src="https://ik.trn.asia/uploads/2021/08/1627894603712.jpeg" alt="">
+      <h4>COFFE MORNING</h4>
+      <p> Telkom Indonesia adalah penyedia layanan telekomunikasi yang menyediakan berbagai layanan seperti telepon tetap, telepon seluler, internet, dan layanan data.</p>
+    </div>
+    <div class="pound">
+      <img src="https://digitaltransformation.co.id/wp-content/uploads/2023/03/young-man-engineer-making-program-analyses-1-1.jpg" alt="">
+      <h4>NETWORKING</h4>
+      <p>Telkom Indonesia didirikan pada tahun 1856 dan sejak itu telah berkembang menjadi perusahaan terkemuka di industri telekomunikasi Indonesia. Perusahaan ini memiliki misi untuk menyedi.</p>
+    </div>
+    <div class="pound">
+      <img src="https://plus.unsplash.com/premium_photo-1683134221762-25385482e8ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDB8fGNhYmxlJTIwbGluZXxlbnwwfHx8fDE2ODgxNDU5NjJ8MQ&ixlib=rb-4.0.3&q=80&w=1080" alt="">
+      <h4>VISI</h4>
+      <p> Dengan visi untuk menjadi Digital Telecommunication Company of the Region, Telkom Indonesia terus berinovasi dan berinvestasi dalam teknon</p>
     </div>
   </div>
 
-
-  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-    <div class="w3-content">
-      <div class="w3-third w3-center">
-        <i class="fa fa-signal w3-padding-64 w3-text-red w3-margin-right"></i>
-      </div>
-
-      <div class="w3-twothird">
-        <h1>TELKOM INDONESIA</h1>
-        <h5 class="w3-padding-32">visi misi telkom</h5>
-
-        <p class="w3-text-black">VISIMenjadi digital telco pilihan utama untuk memajukan masyarakat
-          MISIMempercepat pembangunan Infrastruktur dan platform digital cerdas yang berkelanjutan, ekonomis, dan dapat diakses oleh seluruh masyarakat.
-          Mengembangkan talenta digital unggulan yang membantu mendorong kemampuan digital dan tingkat adopsi digital bangsa.
-          Mengorkestrasi ekosistem digital untuk memberikan pengalaman digital pelanggan terbaik
-        </p>
-      </div>
-
-    </div>
-    </section>
-  </div>
+  <div class="utopia">
+    <h7> STRUKTUR BIDANG IS</h7>
+    <p2> inilah beberapa struktur bagian is di telkom gambir</p2>
   </div>
 
-  <!-- Tambahkan sebelum header atau di dalam konten sesuai kebutuhan -->
-<div class="container mt-5">
-  <h2 class="text-center">Struktur Jabatan Perusahaan</h2>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="card text-center">
-        <img src="https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/06/19/Mr-Waduh-Thomas-1215251562.jpg" class="card-img-top rounded-circle" alt="Anggota Perusahaan 1">
-        <div class="card-body">
-          <h5 class="card-title">Mr Waduh</h5>
-          <p class="card-text">Jabatan: Waduh</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card text-center">
-        <img src="https://joglosemarnews.com/images/2020/12/jeremy-thomas.jpg" class="card-img-top rounded-circle" alt="Anggota Perusahaan 2">
-        <div class="card-body">
-          <h5 class="card-title">Mr Jon wik</h5>
-          <p class="card-text">Jabatan: Aktor Film</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card text-center">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajxpFPyxf3nlN1_q_WgqrFZb2XieGI3kNkQ&usqp=CAU" class="card-img-top rounded-circle" alt="Anggota Perusahaan 3">
-        <div class="card-body">
-          <h5 class="card-title">Jajang supryadi</h5>
-          <p class="card-text">Jabatan: Pengamen Priok</p>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
+
+    <div class="struktur-perusahaan">
+		<div class="filipo">
+			<div class="pipo">
+				<div class="tree">
+					<ul>
+						<li> <a href="#"><span>GM WITEL JAKPUS</span></a>
+						<ul>
+						<li> <a href="#"><img src="images/5.jpg"><span>Necromancer</span></a>
+						<ul>
+							<li> <a href="#"><img src="images/1.jpg"><span>Beliau Pertama</span></a> </li>
+							<li> <a href="#"><img src="images/2.jpg"><span>Beliau Kedua</span></a> </li>
+							<li> <a href="#"><img src="images/3.jpg"><span>Beliau Ketiga</span></a> </li>
+							<li> <a href="#"><img src="images/4.jpg"><span>Beliau Keempat</span></a> </li>
+							
+						</ul>
+					</li>
+
+					
+
+				</ul>
+			</li>
+		</ul>
+	</div>
 </div>
+</div>
+</div>
+</html>
 
-<style>
-
- /*.card {
-    background-color: #ffddddff; /* Menambahkan latar belakang warna #ffddddff pada card */
   
 
-  .card-img-top {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto; /* Untuk membuat gambar berada di tengah kartu */
-  }
-
-  .card-title, .card-text {
-    color: black; /* Mengubah warna teks menjadi hitam */
-  }
-</style>
 
 
 
 
-  </div>
-  </footer>
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-  </script>
+
+  
+
+
 
 </body>
-
-</html>
