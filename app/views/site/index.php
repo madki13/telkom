@@ -221,7 +221,7 @@ $this->title = 'My Yii Application';
 	box-sizing: border-box;
 }
 .struktur-perusahaan {
-	height: 60vh;
+	height: 72vh;
 	display: grid;
 	align-items: center;
 	font-family: 'Poppins', sans-serif;
