@@ -226,6 +226,7 @@ $this->title = 'My Yii Application';
 	align-items: center;
 	font-family: 'Poppins', sans-serif;
   margin-bottom: 100px;
+  margin-top: 100px;
 }
 .tree {
 	width: 100%;
@@ -322,6 +323,30 @@ $this->title = 'My Yii Application';
 .tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
 	border-color: #94a0b4;
 }
+
+.yanto img{
+  width: 100%;
+  margin-top: -120px;
+  box-shadow: 10px 18px 38px -3px rgba(153,153,153,0.98);
+  border-radius: 5%;
+  
+
+}
+.yanto {
+     
+      flex-basis: 31%;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+  
+    }
+
+.judul-yanto {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
   </style>
 </head>
 
@@ -338,6 +363,7 @@ $this->title = 'My Yii Application';
       SEPUTAR TELKOM INDONESIA
     </h3>
   </div>
+  
   <div class="isi">
     <div class="content">
       <h4 class="judul-content">TELKOM</h4>
@@ -355,7 +381,7 @@ $this->title = 'My Yii Application';
 
   <div class="struktur">
     <img src="https://www.telkom.co.id/data/image_upload/page/1594112895830_compress_PNG%20Icon%20Telkom.png" alt="">
-    <h6> Apa itu IS dan IPN dan Swtiching?</h6>
+    <h6> Divisi GM witel JAKPUS </h6>
     <p1> </p1>
     
   </div>
@@ -377,6 +403,26 @@ $this->title = 'My Yii Application';
       <p>Proses menghubungkan satu atau lebih perangkat untuk melakukan komunikasi. Perangkat tersebut dapat berupa terminal, seperti telepon, komputer, atau perangkat lainnya. </p>
     </div>
   </div>
+
+  <div class="isi">
+    <div class="yanto">
+      <img src="https://www.ecustomerserviceworld.com/wp-content/uploads/2022/07/Cara-Membuat-Layanan-Pelanggan-yang-Baik.jpg" alt="">
+      <h4 class="judul-yanto">CME</h4>
+      <p> CME adalah singkatan dari "Customer Management Executive.seorang CME adalah seorang profesional yang bertanggung jawab atas manajemen pelanggan atau layanan pelanggan. Peran seorang CME melibatkan interaksi dengan pelanggan untuk memastikan bahwa layanan telekomunikasi yang disediakan oleh perusahaan memenuhi kebutuhan dan harapan pelanggan.</p>
+    </div>
+    <div class="yanto">
+      <img src="https://blog.gamatechno.com/wp-content/uploads/2022/12/erp-adalah-investasi.jpg" alt="">
+      <h4 class="judul-yanto">TRANSPORT</h4>
+      <p>"transport" mengacu pada infrastruktur dan teknologi yang digunakan untuk mengirimkan data, suara, atau sinyal komunikasi dari satu tempat ke tempat lain. Ini adalah bagian penting dari jaringan telekomunikasi yang memungkinkan komunikasi antara pelanggan, bisnis, dan berbagai titik dalam jaringan.</p>
+    </div>
+    <div class="yanto">
+      <img src="https://glints.com/id/lowongan/wp-content/uploads/2021/08/x-tools-data-management.jpg" alt="">
+      <h4 class="judul-yanto">DEPA</h4>
+      <p> Dengan visi untuk menjadi Digital Telecommunication Company of the Region, Telkom Indonesia terus berinovasi dan berinvestasi dalam teknologi terbaru untuk memenuhi kebutuhan pelanggan di era digital.</p>
+    </div>
+  </div>
+
+ 
 
   <div class="block-merah"></div>
 
@@ -401,8 +447,9 @@ $this->title = 'My Yii Application';
 					<ul>
 							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Billy</span></a> </li>
 							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Bintang</span></a> </li>
-							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>karyawan Ketiga</span></a> </li>
-							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>karyawan Keempat</span></a> </li>
+							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>aris</span></a> </li>
+              <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>beni</span></a> </li>
+              <li> <a><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>umi</span></a> </li>
 					</ul>
 					</li>
 
@@ -415,6 +462,8 @@ $this->title = 'My Yii Application';
 </div>
 </div>
 </html>
+
+  
 
   
 
