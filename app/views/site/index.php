@@ -392,17 +392,17 @@ $this->title = 'My Yii Application';
 			<div class="pipo">
 				<div class="tree">
         <ul>
-						<li> <a href="#"><span>GM WITEL JAKPUS</span></a>
+						<li> <a><span>GM WITEL JAKPUS</span></a>
 					<ul>
 					<ul>
-          <li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Ahmad Mulyono</span></a>
+          <li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Ahmad Mulyono</span></a>
 					<ul>
-						<li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Riyanto</span></a>
+						<li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Riyanto</span></a>
 					<ul>
-							<li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Beliau Pertama</span></a> </li>
-							<li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Beliau Kedua</span></a> </li>
-							<li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>Beliau Ketiga</span></a> </li>
-							<li> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Beliau Keempat</span></a> </li>
+							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Billy</span></a> </li>
+							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Bintang</span></a> </li>
+							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>karyawan Ketiga</span></a> </li>
+							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>karyawan Keempat</span></a> </li>
 					</ul>
 					</li>
 
