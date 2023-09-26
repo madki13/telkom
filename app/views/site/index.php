@@ -31,7 +31,7 @@ $this->title = 'My Yii Application';
       justify-content: center;
       text-align: center;
       background-color: lightgray;
-     
+
     }
 
     .center {
@@ -83,7 +83,7 @@ $this->title = 'My Yii Application';
       margin-top: 4%;
       justify-content: space-between;
       padding: 60px;
-      
+
 
     }
 
@@ -96,24 +96,27 @@ $this->title = 'My Yii Application';
       box-sizing: border-box;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      box-shadow: 0px 0px 96px -11px rgba(0,0,0,0.56);
+      box-shadow: 0px 0px 96px -11px rgba(0, 0, 0, 0.56);
     }
 
     .judul-content {
       font-weight: 600;
       font-size: 27px;
     }
-    .struktur{
-        align-items: center;
-        margin-top: 100px;
+
+    .struktur {
+      align-items: center;
+      margin-top: 100px;
     }
-    .struktur img{
+
+    .struktur img {
       max-width: 200px;
       margin-right: 20px;
       margin-top: -60px;
       margin-left: 50px;
     }
-    .struktur h6{
+
+    .struktur h6 {
       margin: 0;
       margin-top: -110px;
       font-family: 'Poppins', sans-serif;
@@ -121,21 +124,22 @@ $this->title = 'My Yii Application';
       font-size: 40px;
       display: flex;
       margin-left: 270px;
-      
+
 
     }
-    .struktur p1{
+
+    .struktur p1 {
       margin-left: -140px;
       font-family: 'Poppins', sans-serif;
       font-size: 18px;
       display: flex;
       margin-left: 270PX;
       margin-top: 35px;
-      
+
 
     }
 
-    .pound{
+    .pound {
       width: 80%;
       margin: auto;
       text-align: center;
@@ -144,10 +148,11 @@ $this->title = 'My Yii Application';
       margin-top: -100px;
 
     }
-    .pound img{
+
+    .pound img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 10px 18px 38px -3px rgba(153,153,153,0.98);
+      box-shadow: 10px 18px 38px -3px rgba(153, 153, 153, 0.98);
     }
 
     .judul-pound {
@@ -155,22 +160,23 @@ $this->title = 'My Yii Application';
 
     }
 
-  
-    .utopia h7{
+
+    .utopia h7 {
       display: block;
       text-align: center;
       font-size: 40px;
       font-family: 'Poppins', sans-serif;
 
     }
-    .utopia p2{
+
+    .utopia p2 {
       display: block;
       text-align: center;
       font-size: 20px;
       font-family: 'Poppins', sans-serif;
     }
-    
-    .profile{
+
+    .profile {
       width: 80%;
       margin: auto;
       text-align: center;
@@ -180,13 +186,13 @@ $this->title = 'My Yii Application';
 
     }
 
-    .profile img{
+    .profile img {
       width: 40%;
       border-radius: 50%;
 
     }
 
-    .bihan{
+    .bihan {
       width: 80%;
       margin: auto;
       text-align: center;
@@ -195,13 +201,13 @@ $this->title = 'My Yii Application';
       margin-top: -100px;
     }
 
-    .bihan img{
+    .bihan img {
       width: 20%;
       border-radius: 50%;
 
     }
 
-    .center img{
+    .center img {
       width: 20%;
       margin-top: -15%;
       margin-left: -15%
@@ -216,137 +222,163 @@ $this->title = 'My Yii Application';
     } */
 
     * {
-	padding: 0px;
-	margin: 0px;
-	box-sizing: border-box;
-}
-.struktur-perusahaan {
-	height: 72vh;
-	display: grid;
-	align-items: center;
-	font-family: 'Poppins', sans-serif;
-  margin-bottom: 100px;
-  margin-top: 100px;
-}
-.tree {
-	width: 100%;
-	height: auto;
-	text-align: center;
-}
-.tree ul {
-	padding-top: 20px;
-	position: relative;
-	transition: .5s;
-}
-.tree li {
-	display: inline-table;
-	text-align: center;
-	list-style-type: none;
-	position: relative;
-	padding: 10px;
-	transition: .5s;
-}
-.tree li::before, .tree li::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 50%;
-	border-top: 1px solid #ccc;
-	width: 51%;
-	height: 10px;
-}
-.tree li::after {
-	right: auto;
-	left: 50%;
-	border-left: 1px solid #ccc;
-}
-.tree li:only-child::after, .tree li:only-child::before {
-	display: none;
-}
-.tree li:only-child {
-	padding-top: 0;
-}
-.tree li:first-child::before, .tree li:last-child::after {
-	border: 0 none;
-}
-.tree li:last-child::before {
-	border-right: 1px solid #ccc;
-	border-radius: 0 5px 0 0;
-	-webkit-border-radius: 0 5px 0 0;
-	-moz-border-radius: 0 5px 0 0;
-}
-.tree li:first-child::after {
-	border-radius: 5px 0 0 0;
-	-webkit-border-radius: 5px 0 0 0;
-	-moz-border-radius: 5px 0 0 0;
-}
-.tree ul ul::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	border-left: 1px solid #ccc;
-	width: 0;
-	height: 20px;
-}
-.tree li a {
-	border: 1px solid #ccc;
-	padding: 10px;
-	display: inline-grid;
-	border-radius: 5px;
-	text-decoration-line: none;
-	border-radius: 5px;
-	transition: .5s;
-}
-.tree li a img {
-	width: 50px;
-	height: 50px;
-	margin-bottom: 10px !important;
-	border-radius: 100px;
-	margin: auto;
-}
-.tree li a span {
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	color: #666;
-	padding: 8px;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 500;
-}
-.tree li a:hover, .tree li a:hover i, .tree li a:hover span, .tree li a:hover+ul li a {
-	background: #c8e4f8;
-	color: #000;
-	border: 1px solid #94a0b4;
-}
-.tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
-	border-color: #94a0b4;
-}
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+    }
 
-.yanto img{
-  width: 100%;
-  margin-top: -120px;
-  box-shadow: 10px 18px 38px -3px rgba(153,153,153,0.98);
-  border-radius: 5%;
-  
+    .struktur-perusahaan {
+      height: 72vh;
+      display: grid;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
 
-}
-.yanto {
-     
+    .tree {
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+
+    .tree ul {
+      padding-top: 20px;
+      position: relative;
+      transition: .5s;
+    }
+
+    .tree li {
+      display: inline-table;
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 10px;
+      transition: .5s;
+    }
+
+    .tree li::before,
+    .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 1px solid #ccc;
+      width: 51%;
+      height: 10px;
+    }
+
+    .tree li::after {
+      right: auto;
+      left: 50%;
+      border-left: 1px solid #ccc;
+    }
+
+    .tree li:only-child::after,
+    .tree li:only-child::before {
+      display: none;
+    }
+
+    .tree li:only-child {
+      padding-top: 0;
+    }
+
+    .tree li:first-child::before,
+    .tree li:last-child::after {
+      border: 0 none;
+    }
+
+    .tree li:last-child::before {
+      border-right: 1px solid #ccc;
+      border-radius: 0 5px 0 0;
+      -webkit-border-radius: 0 5px 0 0;
+      -moz-border-radius: 0 5px 0 0;
+    }
+
+    .tree li:first-child::after {
+      border-radius: 5px 0 0 0;
+      -webkit-border-radius: 5px 0 0 0;
+      -moz-border-radius: 5px 0 0 0;
+    }
+
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-left: 1px solid #ccc;
+      width: 0;
+      height: 20px;
+    }
+
+    .tree li a {
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: inline-grid;
+      border-radius: 5px;
+      text-decoration-line: none;
+      border-radius: 5px;
+      transition: .5s;
+    }
+
+    .tree li a img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px !important;
+      border-radius: 100px;
+      margin: auto;
+    }
+
+    .tree li a span {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #666;
+      padding: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    .tree li a:hover,
+    .tree li a:hover i,
+    .tree li a:hover span,
+    .tree li a:hover+ul li a {
+      background: #c8e4f8;
+      color: #000;
+      border: 1px solid #94a0b4;
+    }
+
+    .tree li a:hover+ul li::after,
+    .tree li a:hover+ul li::before,
+    .tree li a:hover+ul::before,
+    .tree li a:hover+ul ul::before {
+      border-color: #94a0b4;
+    }
+
+    .yanto img {
+      width: 100%;
+      margin-top: -120px;
+      box-shadow: 10px 18px 38px -3px rgba(153, 153, 153, 0.98);
+      border-radius: 5%;
+
+
+    }
+
+    .yanto {
+
       flex-basis: 31%;
       padding: 30px 20px;
       box-sizing: border-box;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-  
+
     }
 
-.judul-yanto {
-  margin-top: 20px;
-  font-weight: 600;
-}
-
+    .judul-yanto {
+      margin-top: 20px;
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -363,7 +395,7 @@ $this->title = 'My Yii Application';
       SEPUTAR TELKOM INDONESIA
     </h3>
   </div>
-  
+
   <div class="isi">
     <div class="content">
       <h4 class="judul-content">TELKOM</h4>
@@ -383,98 +415,81 @@ $this->title = 'My Yii Application';
     <img src="https://www.telkom.co.id/data/image_upload/page/1594112895830_compress_PNG%20Icon%20Telkom.png" alt="">
     <h6> Divisi GM witel JAKPUS </h6>
     <p1> </p1>
-    
+
   </div>
-  
+
   <div class="isi">
+
     <div class="pound">
       <img src="https://ik.trn.asia/uploads/2021/08/1627894603712.jpeg" alt="">
       <h4 class="judul-pound">IS</h4>
       <p> IS, unit kerja di bawah TELKOM STO Gambir, bertanggung jawab atas instalasi dan pengelolaan infrastruktur jaringan, jaringan telekomunikasi, dan seat management perangkat elektronik (laptop, desktop, printer, dan infocus) di seluruh gedung TELKOM.</p>
     </div>
+    
     <div class="pound">
       <img src="https://digitaltransformation.co.id/wp-content/uploads/2023/03/young-man-engineer-making-program-analyses-1-1.jpg" alt="">
       <h4 class="judul-pound">IPN</h4>
-      <p>IPN, unit kerja di bawah TELKOM STO Gambir, bertanggung jawab atas pemeliharaan jaringan metro di seluruh wilayah kerja Witel Jakarta Pusat.     </p>
+      <p>IPN, unit kerja di bawah TELKOM STO Gambir, bertanggung jawab atas pemeliharaan jaringan metro di seluruh wilayah kerja Witel Jakarta Pusat. </p>
     </div>
+    
     <div class="pound">
       <img src="https://plus.unsplash.com/premium_photo-1683134221762-25385482e8ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDB8fGNhYmxlJTIwbGluZXxlbnwwfHx8fDE2ODgxNDU5NjJ8MQ&ixlib=rb-4.0.3&q=80&w=1080" alt="">
       <h4 class="judul-pound">Switching</h4>
       <p>Proses menghubungkan satu atau lebih perangkat untuk melakukan komunikasi. Perangkat tersebut dapat berupa terminal, seperti telepon, komputer, atau perangkat lainnya. </p>
     </div>
+
+    <div class="pound">
+      <img src="https://www.altamez.com/images/FMS/civil.jpg" alt="">
+      <h4 class="judul-pound">CME</h4>
+      <p> CME (Civil Mechanical Electrical) ialah rangkaian yang berproses dan berproteksi bersama dengan perangkat pendukung telekomunikasinya; Engine Generator, Rectifier dan baterai, untuk menghasilkan catu daya. </p>
+    </div>
+
+    <div class="pound">
+      <img src="https://www.inixindo.id/wp-content/uploads/2023/05/young-business-engineer-with-tablet-medium-shot-1-870x520.webp" alt="">
+      <h4 class="judul-pound">transport</h4>
+      <p>  merupakan salah satu bagian penting dari perusahaan telekomunikasi terbesar di Indonesia. Divisi Transport bertanggung jawab untuk mengelola infrastruktur dan layanan transportasi data yang mendukung jaringan telekomunikasi Telkom. </p>
+    </div>
+
   </div>
-
-  <div class="isi">
-    <div class="yanto">
-      <img src="https://www.ecustomerserviceworld.com/wp-content/uploads/2022/07/Cara-Membuat-Layanan-Pelanggan-yang-Baik.jpg" alt="">
-      <h4 class="judul-yanto">CME</h4>
-      <p> CME adalah singkatan dari "Customer Management Executive.seorang CME adalah seorang profesional yang bertanggung jawab atas manajemen pelanggan atau layanan pelanggan. Peran seorang CME melibatkan interaksi dengan pelanggan untuk memastikan bahwa layanan telekomunikasi yang disediakan oleh perusahaan memenuhi kebutuhan dan harapan pelanggan.</p>
-    </div>
-    <div class="yanto">
-      <img src="https://blog.gamatechno.com/wp-content/uploads/2022/12/erp-adalah-investasi.jpg" alt="">
-      <h4 class="judul-yanto">TRANSPORT</h4>
-      <p>"transport" mengacu pada infrastruktur dan teknologi yang digunakan untuk mengirimkan data, suara, atau sinyal komunikasi dari satu tempat ke tempat lain. Ini adalah bagian penting dari jaringan telekomunikasi yang memungkinkan komunikasi antara pelanggan, bisnis, dan berbagai titik dalam jaringan.</p>
-    </div>
-    <div class="yanto">
-      <img src="https://glints.com/id/lowongan/wp-content/uploads/2021/08/x-tools-data-management.jpg" alt="">
-      <h4 class="judul-yanto">DEPA</h4>
-      <p> Dengan visi untuk menjadi Digital Telecommunication Company of the Region, Telkom Indonesia terus berinovasi dan berinvestasi dalam teknologi terbaru untuk memenuhi kebutuhan pelanggan di era digital.</p>
-    </div>
-  </div>
-
- 
-
-  <div class="block-merah"></div>
 
   <div class="utopia">
-    <h7> STRUKTUR BIDANG IS, IPN, Switching</h7>
-    <p2>Struktur bagian IS, IPN, Switching di Telkom Gambir</p2>
-  </div>
+  <h7> STRUKTUR BIDANG IS, IPN, Switching</h7>
+  <p2>Struktur bagian IS, IPN, Switching di Telkom Gambir</p2>
+</div>
 
- 
 
-    <div class="struktur-perusahaan">
-		<div class="filipo">
-			<div class="pipo">
-				<div class="tree">
+
+  <div class="struktur-perusahaan">
+  <div class="filipo">
+    <div class="pipo">
+      <div class="tree">
+      <ul>
+          <li> <a><span>GM WITEL JAKPUS</span></a>
         <ul>
-						<li> <a><span>GM WITEL JAKPUS</span></a>
-					<ul>
-					<ul>
-          <li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Ahmad Mulyono</span></a>
-					<ul>
-						<li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Riyanto</span></a>
-					<ul>
-							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Billy</span></a> </li>
-							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Bintang</span></a> </li>
-							<li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>aris</span></a> </li>
-              <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>beni</span></a> </li>
-              <li> <a><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>umi</span></a> </li>
-					</ul>
-					</li>
+        <ul>
+        <li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Ahmad Mulyono</span></a>
+        <ul>
+          <li> <a><img src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"><span>Riyanto</span></a>
+        <ul>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Billy</span></a> </li>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>Bintang</span></a> </li>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>aris</span></a> </li>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>beni</span></a> </li>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/6833/6833591.png"><span>umi</span></a> </li>
+            <li> <a><img src="https://cdn-icons-png.flaticon.com/512/180/180658.png"><span>rizal</span></a> </li>
+        </ul>
+        </li>
 
-				
-				</ul>
-			</li>
-		</ul>
-	</div>
+      
+      </ul>
+    </li>
+  </ul>
+</div>
 </div>
 </div>
 </div>
 </html>
 
-  
 
   
-
-
-
-
-
-
-
-  
-
-
-
 </body>
